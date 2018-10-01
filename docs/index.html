@@ -7,7 +7,7 @@
 		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/white.css">
+		<link rel="stylesheet" href="css/theme/league.css">
 		<link rel="stylesheet" href="css/custom.css">
 
 		<!-- Theme used for syntax highlighting of code -->
@@ -24,13 +24,17 @@
 	</head>
 	<body>
 		<div class="reveal">
-		<!-- INTRO -->
+			<!-- ====================== BETWEEN REVEAL AND SLIDES ====================== -->
+			<header class="left" style="position: absolute; left: 10px;"></header>
+			<header class="right" style="position: absolute; right: 10px;"></header>
+			<!-- ====================== BETWEEN REVEAL AND SLIDES ====================== -->
+			<!-- INTRO -->
 			<div class="slides">
 				<section data-background-transition="zoom">
 					<section data-background="img/splash_code.jpg">
 						<h1 class="bandeau">Design Patterns</h1>
 					</section>
-					<section data-background="#fff">
+					<section >
 						<h2>Qui suis je ?</h2>
 						<p>Développeur & Architecte @ Prynεl</p>
 						<p>+10 XP</p>
@@ -42,7 +46,48 @@
 						</aside>
 					</section>
 				</section>
-				<section>Slide 2</section>
+				<section>
+					<section>Principes des design patterns </section>
+					
+					<section data-state="headleft headright" data-background="img/architect.jpg">
+						<style>.headleft header.left:after { content: "Principes"; }</style>
+						<!--<style>.headright header.right:after { content: "headline"; }</style>-->
+						<h3>Historique</h3>
+						<ul>
+							<li>1977</li>
+							<li>Christopher Alexander</li>
+							<li>Architecte</li>
+						</ul>
+						
+						<aside class="notes">
+							1ère notion en 1977 par un architecte en batiment.
+						</aside>
+					</section>
+					<section data-state="headleft headright" data-background="img/architect.jpg">
+						<style>.headleft header.left:after { content: "Principes"; }</style>
+						<ul>
+							<li>Monde du batiment</li>
+							<li>Problème récurrents</li>
+							<li>Patron de conception = solution à un problème</li>
+							<li>Aide à la décision</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Fait référence au monde du batiment, mais c'est applicable à la programmation</li>
+								<li>Il remarque des problèmes récurrents dans les constructions , qui pourraient être solutionner en appliquant certains principes</li>
+								<li>Un patron de conception est une solution à un problème dans un context donné</li>
+								<li>Aide le concepteur à choisir la bonne solution rapidement</li>
+							</ul>
+						</aside>
+					</section>
+					<section data-state="headleft headright" data-background="img/gof.jpg">
+						G.O.F
+					</section>
+				</section>
+				<section>Les patterns createur</section>
+				<section>Les patterns structuraux</section>
+				<section>Les patterns comportementaux</section>
+				<section>G.R.A.S.P.</section>
 			</div>
 		</div>
 
