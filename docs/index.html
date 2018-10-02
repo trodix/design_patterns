@@ -1,111 +1,173 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/league.css">
-		<link rel="stylesheet" href="css/custom.css">
+	<title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/league.css">
+	<link rel="stylesheet" href="css/custom.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<!-- ====================== BETWEEN REVEAL AND SLIDES ====================== -->
-			<header class="left" style="position: absolute; left: 10px;"></header>
-			<header class="right" style="position: absolute; right: 10px;"></header>
-			<!-- ====================== BETWEEN REVEAL AND SLIDES ====================== -->
-			<!-- INTRO -->
-			<div class="slides">
-				<section data-background-transition="zoom">
-					<section data-background="img/splash_code.jpg">
-						<h1 class="bandeau">Design Patterns</h1>
-					</section>
-					<section >
-						<h2>Qui suis je ?</h2>
-						<p>Développeur & Architecte @ Prynεl</p>
-						<p>+10 XP</p>
-						<p>Expert PHP, Senior Android, C++, JS , BDD, etc ...</p>
-						<p>En ligne : oroger.fr / grunk @ dvp | stackoverflow | github</p>
-						<p><img src="img/so.jpg" /></p>
-						<aside class="notes">
-							Prynel : R&D Vidéo Surveillance : ~ 15 employés. Majorité de C++. TEB => Acteur majeur VS france
-						</aside>
-					</section>
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<!-- ====================== BETWEEN REVEAL AND SLIDES ====================== -->
+		<header class="left" style="position: absolute; left: 10px;"></header>
+		<header class="right" style="position: absolute; right: 10px;"></header>
+		<!-- ====================== BETWEEN REVEAL AND SLIDES ====================== -->
+		<!-- INTRO -->
+		<div class="slides">
+			<section data-background-transition="zoom">
+				<section data-background="img/splash_code.jpg">
+					<h1 class="bandeau">Design Patterns</h1>
 				</section>
 				<section>
-					<section>Principes des design patterns </section>
-					
-					<section data-state="headleft headright" data-background="img/architect.jpg">
-						<style>.headleft header.left:after { content: "Principes"; }</style>
-						<!--<style>.headright header.right:after { content: "headline"; }</style>-->
-						<h3>Historique</h3>
+					<h2>Qui suis je ?</h2>
+					<p>Développeur & Architecte @ Prynεl</p>
+					<p>+10 XP</p>
+					<p>Expert PHP, Senior Android, C++, JS , BDD, etc ...</p>
+					<p>En ligne : oroger.fr / grunk @ dvp | stackoverflow | github</p>
+					<p><img src="img/so.jpg" /></p>
+					<aside class="notes">
+						Prynel : R&D Vidéo Surveillance : ~ 15 employés. Majorité de C++. TEB => Acteur majeur VS france
+					</aside>
+				</section>
+			</section>
+			<section>
+				<section>Principes des design patterns </section>
+				<section>
+					<h2>Définition</h2>
+					<p>Solution à un problème récurrent</p>
+					<p>Orienté objet</p>
+					<p>Indépendant du langage</p>
+					<aside class="notes">
+						Décrit une solution éprouvée à un problème récurrent.<br />
+						Ex : Comment ajouter des fonctions à une classes sans la modifier <br />
+						Ex : Comment garantir l'unicité d'instance d'une classe<br />
+					</aside>
+				</section>
+				<section data-background="img/architect.jpg">
+					<h3>Historique</h3>
+					<ul>
+						<li>1977</li>
+						<li>Christopher Alexander</li>
+						<li>Architecte</li>
+					</ul>
+
+					<aside class="notes">
+						1ère notion en 1977 par un architecte en batiment.
+					</aside>
+				</section>
+				<section data-background="img/architect.jpg">
+
+					<ul>
+						<li>Monde du batiment</li>
+						<li>Problème récurrents</li>
+						<li>Patron de conception = solution à un problème</li>
+						<li>Aide à la décision</li>
+					</ul>
+					<aside class="notes">
 						<ul>
-							<li>1977</li>
-							<li>Christopher Alexander</li>
-							<li>Architecte</li>
+							<li>Fait référence au monde du batiment, mais c'est applicable à la programmation</li>
+							<li>Il remarque des problèmes récurrents dans les constructions , qui pourraient être solutionner en appliquant
+								certains principes</li>
+							<li>Un patron de conception est une solution à un problème dans un context donné</li>
+							<li>Aide le concepteur à choisir la bonne solution rapidement</li>
 						</ul>
-						
-						<aside class="notes">
-							1ère notion en 1977 par un architecte en batiment.
-						</aside>
-					</section>
-					<section data-state="headleft headright" data-background="img/architect.jpg">
-						<style>.headleft header.left:after { content: "Principes"; }</style>
+					</aside>
+				</section>
+				<section data-background="img/gof.jpg">
+					<h2>G.O.F</h2>
+					<ul>
+						<li>Erich Gamma</li>
+						<li>Richard Helm</li>
+						<li>Ralph Johnson</li>
+						<li>John Vlissides</li>
+					</ul><br />
+					<blockquote>Design Patterns : Elements of Reusable Object-Oriented Software</blockquote>
+					<aside class="notes">
+						Idée de Alexander appliquée à la conception informatique.
+						En 1995 publication du livre Design Patterns : Elements of Reusable Object-Oriented Software.<br />
+						23 patterns<br />
+						Font référence aujourd'hui dans l'informatique
+
+					</aside>
+				</section>
+				<section>
+					<h2>Description</h2>
+					<ul>
+						<li>Nom</li>
+						<li>Problématique</li>
+						<li>Solution</li>
+						<li>Conséquences</li>
+					</ul>
+					<aside class="notes">
+						Un pattern se décrit avec 4 éléments : <br />
+						<strong>Nom</strong> : Permet de l'identifier et éventuellement de décrire le problème rapidement<br />
+						<strong>Problématique</strong> : Une description du problème que le pattern résoud<br />
+						<strong>Solution</strong> : Comment résoudre le problème. Souvent détaillé avec de l'UML<br />
+						<strong>Conséquences</strong> : Quels sont les avantages et inconvenients de la solution<br />
+					</aside>
+				</section>
+				<section>
+						<h2>Quand ? Pourquoi ?</h2>
 						<ul>
-							<li>Monde du batiment</li>
-							<li>Problème récurrents</li>
-							<li>Patron de conception = solution à un problème</li>
-							<li>Aide à la décision</li>
+							<li>Dès qu'un problème de conception se pose</li>
+							<li>Utilisation d'une solution éprouvée</li>
+							<li>Productivité</li>
+							<li>Qualité de code</li>
+							<li>Bonnes pratiques</li>
+							<li><img width="24px" height="24px" src="img/warning.png" style="border: none;margin:0;background: none;" />Over engineering</li>
 						</ul>
 						<aside class="notes">
 							<ul>
-								<li>Fait référence au monde du batiment, mais c'est applicable à la programmation</li>
-								<li>Il remarque des problèmes récurrents dans les constructions , qui pourraient être solutionner en appliquant certains principes</li>
-								<li>Un patron de conception est une solution à un problème dans un context donné</li>
-								<li>Aide le concepteur à choisir la bonne solution rapidement</li>
+								<li>Penser aux Dp dès qu'on est face à un problème de conception</li>
+								<li>Permet d'utiliser une solution sure et éprouvée qui résoud le problème</li>
+								<li>Gain de productivité évident (code déjà fait , connu de tous)</li>
+								<li>Favorise les bonnes pratiques (couplage faible, lisibilité, evolutivité,etc ...)</li>
+								<li>Attention à ne pas en abuser. Peut cacher un problème de conception plus grave. Il préférable de refactorer vers les designs patterns si besoin</li>
 							</ul>
 						</aside>
 					</section>
-					<section data-state="headleft headright" data-background="img/gof.jpg">
-						G.O.F
-					</section>
-				</section>
-				<section>Les patterns createur</section>
-				<section>Les patterns structuraux</section>
-				<section>Les patterns comportementaux</section>
-				<section>G.R.A.S.P.</section>
-			</div>
+			</section>
+			<section>Les patterns createur</section>
+			<section>Les patterns structuraux</section>
+			<section>Les patterns comportementaux</section>
+			<section>G.R.A.S.P.</section>
 		</div>
+	</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+			]
+		});
+	</script>
+</body>
+
 </html>
