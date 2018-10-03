@@ -49,12 +49,12 @@
 				</section>
 			</section>
 			<section>
-				<section>Principes des design patterns </section>
+				<section><h1>Principes des design patterns</h1></section>
 				<section>
 					<h2>Définition</h2>
-					<p>Solution à un problème récurrent</p>
-					<p>Orienté objet</p>
-					<p>Indépendant du langage</p>
+					<p class="fragment fade-up">Solution à un problème récurrent</p>
+					<p class="fragment fade-up">Orienté objet</p>
+					<p class="fragment fade-up">Indépendant du langage</p>
 					<aside class="notes">
 						Décrit une solution éprouvée à un problème récurrent.<br />
 						Ex : Comment ajouter des fonctions à une classes sans la modifier <br />
@@ -62,7 +62,7 @@
 					</aside>
 				</section>
 				<section data-background="img/architect.jpg">
-					<h3>Historique</h3>
+					<h2>Historique</h2>
 					<ul>
 						<li>1977</li>
 						<li>Christopher Alexander</li>
@@ -74,7 +74,7 @@
 					</aside>
 				</section>
 				<section data-background="img/architect.jpg">
-
+					<h2>Historique</h2>
 					<ul>
 						<li>Monde du batiment</li>
 						<li>Problème récurrents</li>
@@ -111,10 +111,10 @@
 				<section>
 					<h2>Description</h2>
 					<ul>
-						<li>Nom</li>
-						<li>Problématique</li>
-						<li>Solution</li>
-						<li>Conséquences</li>
+						<li class="fragment">Nom</li>
+						<li class="fragment">Problématique</li>
+						<li class="fragment">Solution</li>
+						<li class="fragment">Conséquences</li>
 					</ul>
 					<aside class="notes">
 						Un pattern se décrit avec 4 éléments : <br />
@@ -125,29 +125,46 @@
 					</aside>
 				</section>
 				<section>
-						<h2>Quand ? Pourquoi ?</h2>
+					<h2>Quand ? Pourquoi ?</h2>
+					<ul>
+						<li>Dès qu'un problème de conception se pose</li>
+						<li>Utilisation d'une solution éprouvée</li>
+						<li>Productivité</li>
+						<li>Qualité de code</li>
+						<li>Bonnes pratiques</li>
+						<li><img width="24px" height="24px" src="img/warning.png" style="border: none;margin:0;background: none;" />Over
+							engineering</li>
+					</ul>
+					<aside class="notes">
 						<ul>
-							<li>Dès qu'un problème de conception se pose</li>
-							<li>Utilisation d'une solution éprouvée</li>
-							<li>Productivité</li>
-							<li>Qualité de code</li>
-							<li>Bonnes pratiques</li>
-							<li><img width="24px" height="24px" src="img/warning.png" style="border: none;margin:0;background: none;" />Over engineering</li>
+							<li>Penser aux Dp dès qu'on est face à un problème de conception</li>
+							<li>Permet d'utiliser une solution sure et éprouvée qui résoud le problème</li>
+							<li>Gain de productivité évident (code déjà fait , connu de tous)</li>
+							<li>Favorise les bonnes pratiques (couplage faible, lisibilité, evolutivité,etc ...)</li>
+							<li>Attention à ne pas en abuser. Peut cacher un problème de conception plus grave. Il préférable de refactorer
+								vers les designs patterns si besoin</li>
 						</ul>
-						<aside class="notes">
-							<ul>
-								<li>Penser aux Dp dès qu'on est face à un problème de conception</li>
-								<li>Permet d'utiliser une solution sure et éprouvée qui résoud le problème</li>
-								<li>Gain de productivité évident (code déjà fait , connu de tous)</li>
-								<li>Favorise les bonnes pratiques (couplage faible, lisibilité, evolutivité,etc ...)</li>
-								<li>Attention à ne pas en abuser. Peut cacher un problème de conception plus grave. Il préférable de refactorer vers les designs patterns si besoin</li>
-							</ul>
-						</aside>
-					</section>
+					</aside>
+				</section>
+				<section>
+					<h2>Répartition</h2>
+					<ul>
+						<li class="fragment">Patrons créateurs</li>
+						<li class="fragment">Patrons structuraux</li>
+						<li class="fragment">Patrons comportementaux</li>
+					</ul>
+					<aside class="notes">
+						Créateurs : Comment son créer les objets. => La famille la plus importante<br />
+						Structuraux : Comment les classes sont organisée pour former un plus grand ensemble.<br />
+						Comportementaux : Comment les objets communiquent entre eux et partage les responsabilité sur la gestion algorithmique.<br />
+						<br />
+						Structuraux et comportementaux sont moins courants => plus souvent rencontré dans le dév de lib ou FW
+					</aside>
+				</section>
 			</section>
-			<section>Les patterns createur</section>
-			<section>Les patterns structuraux</section>
-			<section>Les patterns comportementaux</section>
+			<section data-background="img/create.jpg"><h1>Les patterns createur</h1></section>
+			<section data-background="img/structure.jpg"><h1>Les patterns structuraux</h1></section>
+			<section data-background="img/behavior.jpg"><h1>Les patterns comportementaux</h1></section>
 			<section>G.R.A.S.P.</section>
 		</div>
 	</div>
