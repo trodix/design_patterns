@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="css/custom.css">
 
 	<!-- Theme used for syntax highlighting of code -->
-	<link rel="stylesheet" href="lib/css/zenburn.css">
+	<link rel="stylesheet" href="lib/css/monokai.css">
 
 	<!-- Printing and PDF exports -->
 	<script>
@@ -162,7 +162,84 @@
 					</aside>
 				</section>
 			</section>
-			<section data-background="img/create.jpg"><h1>Les patterns createur</h1></section>
+			<section data-background="img/create.jpg"><h1>Les patterns createurS</h1></section>
+			<section>
+				<section data-background="img/singleton.jpg">
+					<h2>Singleton</h2>
+					<aside class="notes">Le plus connu mais aussi le plus controversé. Utilisation très discutable notamment selon les langages</aside>
+				</section>
+				<section>
+					<h3>Problématique</h3>
+					<ul>
+						<li class="fragment">Une seule et unique instance</li>
+						<li class="fragment">Accès à cette instance</li>
+					</ul>
+					<aside class="notes">
+						2 objectifs : <br />
+						* Une seule instance d'une classe <br /> Important sur gros projets à plusieurs dev => on ne connais pas tout <br />
+						* Offrir un moyen d'accéder à cette instance <br />
+					</aside>
+				</section>
+				<section>
+					<h3>Quand l'utiliser ?</h3>
+					<p>Une seule instance d'une classe peut exister</p>
+					<ul>
+						<li class="fragment">Ressource système</li>
+						<li class="fragment">Class d'application</li>
+						<li class="fragment">Gestion de journaux <sup>*</sup></li>
+					</ul>
+					<aside class="notes">
+						* Port série<br />
+						* <br />
+						* Fait partie des utilisations très discutable. Des méthodes modernes permettent de s'en passer (DI)<br />
+					</aside>
+				</section>
+				<section>
+					<h3>Conséquences</h3>
+					<ul>
+						<li class="fragment">Controle l'unicité d'instance d'une classe</li>
+						<li class="fragment">Induit des problèmes de thread safety</li>
+					</ul>
+					<aside class="notes">Dans un environnement multi threadé , on risque de casser l'unicité d'instance. Voir plus tard exemple</aside>
+				</section>
+				<section>
+					<h3>La controverse</h3>
+					<ul>
+						<li class="fragment">Utilité parfois discutable selon le langage</li>
+						<li class="fragment">Signe de mauvais design</li>
+						<li class="fragment">Difficile à tester unitairement</li>
+					</ul>
+					<aside class="notes">
+						* Ok dans les environnement à mémoire partagée. Pas en PHP => instance propre à chaque requête , singleton peut ou pas utile. Suffit de pas instancier 2x la même classe.<br />
+						* Une sur utilisation du singleton est souvent un signe de mauvais design. On préfère en général l'injection de dépendance.<br />
+						Une seconde instance va elle crasher mon application => Si non singleton probablement pas nécessaire.<br />
+						* Créer un couplace fort à l'environnement globale de l'application => rend les tests unitaires plus difficile.
+					</aside>
+				</section>
+				<section>
+					<h3>Un peu de technique</h3>
+					<img src="img/singleton-uml.png" />
+				</section>
+				<section>
+					<h3>Implémentation naïve</h3>
+					<pre>
+						<code class="java" data-trim>
+public class Singleton {
+	private static Singleton instance;
+
+	private Singleton() {}
+
+	public static Singleton getInstance() {
+		if (instance == null) {
+			instance = new Singleton();
+		}
+		return instance;
+	}
+}
+						</code>
+					</pre>
+				</section>
+			</section>
 			<section data-background="img/structure.jpg"><h1>Les patterns structuraux</h1></section>
 			<section data-background="img/behavior.jpg"><h1>Les patterns comportementaux</h1></section>
 			<section>G.R.A.S.P.</section>
