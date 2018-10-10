@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>reveal.js</title>
+	<title>Design patterns - CESI</title>
 
 	<link rel="stylesheet" href="css/reveal.css">
 	<link rel="stylesheet" href="css/theme/league.css">
@@ -162,7 +162,7 @@
 					</aside>
 				</section>
 			</section>
-			<section data-background="img/create.jpg"><h1>Les patterns createurS</h1></section>
+			<section data-background="img/create.jpg"><h1>Les patterns createurs</h1></section>
 			<section>
 				<section data-background="img/singleton.jpg">
 					<h2>Singleton</h2>
@@ -217,7 +217,7 @@
 					</aside>
 				</section>
 				<section>
-					<h3>Un peu de technique</h3>
+					<h3>Un peu de pratique</h3>
 					<img src="img/singleton-uml.png" />
 				</section>
 				<section>
@@ -238,6 +238,62 @@ public class Singleton {
 }
 						</code>
 					</pre>
+					<aside class="notes">
+						- Implémentation fonctionnelle<br />
+						- Problème de thread safety : 
+							 - Environnement fortement multi threadé. Peu probable avec 2/3 threads (mais possible)<br />
+							 - plusieurs thread peuvent passer le if en même temps et créer plusieurs instance.
+					</aside>
+				</section>
+				<section>
+						<h3>Implémentation Thread Safe</h3>
+						<pre>
+							<code class="java" data-trim>
+public class Singleton {
+	private static Singleton instance = new Singleton();
+
+	private Singleton() {}
+
+	public static Singleton getInstance() {
+		return instance;
+	}
+}
+							</code>
+						</pre>
+						<aside class="notes">
+							On délègue la synchronisation au class loader. Il le gère en interne.<br />
+							Synchronisation de getInstance possible => /!\ performance<br />
+							Solution peuvent être différente selon les langages.<br />
+						</aside>
+					</section>
+			</section>
+			<section>
+				<section data-background="img/factory.jpg">
+					<h2>Abstract Factory</h2>
+				</section>
+				<section>
+					<h3>Problématique</h3>
+					<p>Fournir différents objets d'une même famille sans connaitre leur implémentation concrète</p>
+					<aside class="notes">
+						
+					</aside>
+				</section>
+				<section>
+					<h3>Quand l'utiliser ?</h3>
+					
+					<ul>
+						<li class="fragment">Objets regroupés en famille (UI , Documents)</li>
+						<li class="fragment">Eviter les couplages forts</li>
+					</ul>
+					<aside class="notes">
+						* Ui : Famille windows/linux; Document : Style moderne/classique
+						* Pas de couplage vers les objets concret.
+					</aside>
+				</section>
+				<section>
+					<h3>Fabrique non abstraite</h3>
+					WIP
+					Attention à faire la différence. Fabrique = bonne pratique. Pas un DP
 				</section>
 			</section>
 			<section data-background="img/structure.jpg"><h1>Les patterns structuraux</h1></section>
