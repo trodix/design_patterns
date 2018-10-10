@@ -10,3 +10,4 @@ https://fr.slideshare.net/soms_1/Design-Patterns-1033051
 https://stackoverflow.com/questions/449731/design-patterns-to-avoid  
 https://stackoverflow.com/a/4596323/393984  
 https://fr.wikipedia.org/wiki/Fabrique_abstraite  
+https://blog.cellenza.com/uncategorized/abstract-factory-fabrique-abstraite/
