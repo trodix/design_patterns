@@ -287,13 +287,33 @@ public class Singleton {
 					</ul>
 					<aside class="notes">
 						* Ui : Famille windows/linux; Document : Style moderne/classique
+						* Véhicule : Essence/Electrique => Voiture/Scooter
 						* Pas de couplage vers les objets concret.
 					</aside>
 				</section>
 				<section>
 					<h3>Fabrique non abstraite</h3>
-					WIP
-					Attention à faire la différence. Fabrique = bonne pratique. Pas un DP
+					<ul>
+						<li>Attention à faire la différence. Fabrique = bonne pratique. Pas un DP</li>
+						<li>Abstract factory permet une évolutivité plus simple</li>
+					</ul>
+					<aside class="notes">
+						* Beaucoup moins de code à changer si nouvelle famille.
+						* Une factory classique va demander plus de modification sur le code qui utilise la factory.
+						* Factory => code figé , Abstract Factory => Code évolutif
+						* Perso : Jamais utilisé d'abstract factory.
+					</aside>
+				</section>
+				<section>
+					<h3>Un peu de pratique</h3>
+					<img src="img/abstract-factory-uml.png" />
+				</section>
+				<section>
+					<h3>Implémentation</h3>
+					<img src="img/af-uml2.png" />
+					<aside class="notes">
+						Exemple intellij
+					</aside>
 				</section>
 			</section>
 			<section data-background="img/structure.jpg"><h1>Les patterns structuraux</h1></section>
