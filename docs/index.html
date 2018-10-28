@@ -316,6 +316,45 @@ public class Singleton {
 					</aside>
 				</section>
 			</section>
+			<section>
+				<section data-background="img/builder.jpg">
+					<h2>Builder</h2>
+				</section>
+				<section>
+					<h3>Problématique</h3>
+					<p>Permettre d'obtenir des réprésentations différentes d'un objet avec le même procédé de construction</p>
+					<aside class="notes">
+						Séparer la construction d'un objet complexe de sa représentation.
+						On déplace la logique de construction en dehors de l'objet à instancier.
+					</aside>
+				</section>
+				<section>
+					<h3>Quand l'utiliser ?</h3>
+					<ul>
+						<li class="fragment">Données de construction incomplète</li>
+						<li class="fragment">Simplification de classe</li>
+					</ul>
+					<aside class="notes">
+						* Exemple : parsage d'un document ou réception de données au fur et à mesure.
+						* On évite de surcharger la classe de l'objet avec des infos liées à sa représentation. Ex : des if/else dans le constructeur pour initialiser l'objet.
+					</aside>
+				</section>
+				<section>
+					<h3>Un peu de pratique</h3>
+					<img src="img/builder-uml.png" />
+					<aside class="notes">
+						
+					</aside>
+				</section>
+				<section>
+					<h3>Implémentation</h3>
+					<img src="img/builder-uml2.png" />
+					<aside class="notes">
+						TODO créer uml à partir exemple wikipedia : 
+						https://fr.wikipedia.org/wiki/Monteur_(patron_de_conception)
+					</aside>
+				</section>
+			</section>
 			<section data-background="img/structure.jpg"><h1>Les patterns structuraux</h1></section>
 			<section data-background="img/behavior.jpg"><h1>Les patterns comportementaux</h1></section>
 			<section>G.R.A.S.P.</section>
