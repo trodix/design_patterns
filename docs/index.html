@@ -217,7 +217,7 @@
 					</aside>
 				</section>
 				<section>
-					<h3>Un peu de pratique</h3>
+					<h3>Un peu de théorie</h3>
 					<img src="img/singleton-uml.png" />
 				</section>
 				<section>
@@ -284,11 +284,12 @@ public class Singleton {
 					<ul>
 						<li class="fragment">Objets regroupés en famille (UI , Documents)</li>
 						<li class="fragment">Eviter les couplages forts</li>
+						<li class="fragment">Masquer la complexiter d'instanciation</li>
 					</ul>
 					<aside class="notes">
 						* Ui : Famille windows/linux; Document : Style moderne/classique
-						* Véhicule : Essence/Electrique => Voiture/Scooter
 						* Pas de couplage vers les objets concret.
+						* On expose uniquement les interfaces nécessaires
 					</aside>
 				</section>
 				<section>
@@ -305,14 +306,14 @@ public class Singleton {
 					</aside>
 				</section>
 				<section>
-					<h3>Un peu de pratique</h3>
+					<h3>Un peu de théorie</h3>
 					<img src="img/abstract-factory-uml.png" />
 				</section>
 				<section>
 					<h3>Implémentation</h3>
 					<img src="img/af-uml2.png" />
 					<aside class="notes">
-						Exemple intellij
+						Exemple intellij à refaire
 					</aside>
 				</section>
 			</section>
@@ -332,27 +333,56 @@ public class Singleton {
 					<h3>Quand l'utiliser ?</h3>
 					<ul>
 						<li class="fragment">Données de construction incomplète</li>
-						<li class="fragment">Simplification de classe</li>
+						<li class="fragment">Simplification de classe : limiter les constructeurs</li>
 					</ul>
 					<aside class="notes">
 						* Exemple : parsage d'un document ou réception de données au fur et à mesure.
-						* On évite de surcharger la classe de l'objet avec des infos liées à sa représentation. Ex : des if/else dans le constructeur pour initialiser l'objet.
+						* On évite de surcharger la classe de l'objet avec des infos liées à sa représentation. Ex : des if/else dans le constructeur pour initialiser l'objet. Ou encore plusieurs constructeurs
 					</aside>
 				</section>
 				<section>
-					<h3>Un peu de pratique</h3>
+					<h3>Un peu de théorie</h3>
 					<img src="img/builder-uml.png" />
 					<aside class="notes">
-						
+						Présenté pour le principe, mais rarement implémenté sous cette forme trop contraignante.
 					</aside>
 				</section>
 				<section>
-					<h3>Implémentation</h3>
-					<img src="img/builder-uml2.png" />
+					<h3>Solution à </h3>
+					<pre>
+					<code class="java" data-trim>
+Pizza p = new Pizza();
+p.setTaille(Taille.GRANDE);
+p.setFromage(Fromage.CHEDDAR);
+					</code>
+					</pre>
+					Ou encore
+					<pre>
+					<code class="java" data-trim>
+						Pizza sansolive = new Pizza(Taille.GRANDE,Fromage.CHEDDAR,false);
+						Pizza avecjambon = new Pizza(Taille.GRANDE,Fromage.CHEDDAR,false,true);
+					</code>
+					</pre>
 					<aside class="notes">
-						TODO créer uml à partir exemple wikipedia : 
-						https://fr.wikipedia.org/wiki/Monteur_(patron_de_conception)
+						1- c'est pas très élégant et fastidieux à écrire. Problème si tous les param pas dispo au moment de la construction
+						2- Compliquer à gérer
 					</aside>
+				</section>
+				<section>
+					<h3>Forme la plus courante</h3>
+					<pre>
+						<code class="java" data-trim>
+Pizza pizza = new PizzaBuilder()
+	.setTaille(Taille.GRANDE)
+	.setFromage(Fromage.MOZZA)
+	.setJambon(true)
+	.setOlive(false)
+	.build();
+						</code>
+						</pre>
+						<aside class="notes">
+							Exemple étudiant. (démo intellij)
+						</aside>
 				</section>
 			</section>
 			<section data-background="img/structure.jpg"><h1>Les patterns structuraux</h1></section>
