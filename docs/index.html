@@ -387,6 +387,45 @@ Pizza pizza = new PizzaBuilder()
 			</section>
 			<section data-background="img/structure.jpg"><h1>Les patterns structuraux</h1></section>
 				<section>
+					<section data-background="img/adapter.jpg">
+						<h2>Adapter</h2>
+					</section>
+					<section>
+						<h3>Problématique</h3>
+						Faire fonctionner ensemble des classes aux interfaces incompatible.
+						<aside class="notes">
+							Exemple : Un driver fournis une interface, mais est incompatible avec le besoin du logiciel.<br />
+							==> On doit adapter son comportement.
+						</aside>
+					</section>
+					<section>
+						<h3>Quand l'utiliser ?</h3>
+						<ul>
+							<li class="fragment">Besoin de convertir l'interface d'une classe en quelque chose de compréhensible</li>
+							<li class="fragment">Impossible de modifier l'interface incompatible</li>
+						</ul>
+						<aside class="notes">
+							Si c'est possible on préfèrera toujours adapter le code.<br />
+							Exemple : API pilotage => multi caméra mais API constructeur imposé. Il faut adapter la notre.
+						</aside>
+					</section>
+					<section>
+						<h3>Un peu de théorie</h3>
+						<img src="img/adapter-uml.jpg" />
+						<aside class="notes">
+							
+						</aside>
+					</section>
+					<section>
+						<h3>Tesla vs Renault</h3>
+						<img src="img/adapter-uml2.jpg" />
+						<aside class="notes">
+							Comment sur un supercharger Tesla accepter une Renault.
+							
+						</aside>
+					</section>
+				</section>
+				<section>
 					<section data-background="img/composite.jpg">
 						<h2>Composite</h2>
 					</section>
