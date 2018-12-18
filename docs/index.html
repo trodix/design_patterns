@@ -426,6 +426,64 @@ Pizza pizza = new PizzaBuilder()
 					</section>
 				</section>
 				<section>
+					<section data-background="img/decorator.jpg">
+						<h2>Decorator</h2>
+						( a.k.a Wrapper )
+					</section>
+					<section>
+						<h3>Problématique</h3>
+						Ajouter des fonctionnalités à une classe dynamiquement.
+						<aside class="notes">
+							DYnamique = à l'execution.
+						</aside>
+					</section>
+					<section>
+						<h3>Quand l'utiliser ?</h3>
+						<ul>
+							<li class="fragment">Ajout de responsabilités optionelles à un objet</li>
+							<li class="fragment">Pas d'héritage</li>
+						</ul>
+						<aside class="notes">
+							Responsabilité optionnelle : <br />
+							=> On doit pouvoir choisir si on utilise ou non les nouvelles responsabilité.<br /><br />
+							Pas d'héritage : <br />
+							* Evite l'héritage fonctionnel. <br />
+							* Manque de souplesse => chaine d'héritage A => B => C , si je veux C je dois tout récupérer. <br />
+							<br />
+							Exemple concret = la gestion des stream java/C# FileWriter,bufferedWriter , etc ...
+						</aside>
+					</section>
+					<section>
+						<h3>Un peu de théorie</h3>
+						<img src="img/decorator-uml.jpg" />
+						<aside class="notes">
+								<ul>
+									<li>Component est une interface qu’implémentent à la fois l’objet décoré et les objets qui le décorent</li>
+									<li>ConcreteComponent représente l’objet décoré (qui implémente Component)</li>
+									<li>Decorator représente l’interface des décorateurs</li>
+									<li>On trouve ensuite les décorateurs concrets (ConcreteDecoratorA, etc.)</li>
+								</ul>
+
+							- L'objet concret et son décorateur hérite de la même interface.<br />
+							- L'agregation indique qu'un décorateur peut contenir un "component"<br />
+							- Principale problème => Le type de l'objet sera celui du dernier décorateur utilisé => peut être problématique à gérer.
+						</aside>
+					</section>
+					<section>
+						<h3>Pratique</h3>
+						<img src="img/decorator-uml2.jpg" />
+						<aside class="notes">
+							Exemple JAVA dispo<br />
+							Le but : <br />
+							* Une classe "Moderator" qui censure du text en remplacant certains mots.<br />
+							* On ajoute au fur et à mesure la possibilité de censurer un numéro de téléphone puis un email.<br />
+
+							La classe Decorator doit être abstraite.<br />
+							
+						</aside>
+					</section>
+				</section>
+				<section>
 					<section data-background="img/composite.jpg">
 						<h2>Composite</h2>
 					</section>
