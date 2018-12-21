@@ -38,9 +38,10 @@
 				</section>
 				<section>
 					<h2>Qui suis je ?</h2>
-					<p>Développeur & Architecte @ Prynεl</p>
+					<p>Développeur & Architecte @ Pryntec</p>
 					<p>+10 XP</p>
 					<p>Expert PHP, Senior Android, C++, JS , BDD, etc ...</p>
+					<p>Informatique industrielle, vidéo surveillance, ...</p>
 					<p>En ligne : oroger.fr / grunk @ dvp | stackoverflow | github</p>
 					<p><img src="img/so.jpg" /></p>
 					<aside class="notes">
@@ -531,6 +532,79 @@ Pizza pizza = new PizzaBuilder()
 						</aside>
 					</section>
 				</section>
+				<section>
+					<section data-background="img/facade.jpg">
+						<h2>Facade</h2>
+						<aside class="notes">
+							Vous l'avez déjà probablement déjà tous utilisé sans le savoir.
+						</aside>
+					</section>
+					<section>
+						<h3>Problématique</h3>
+						Simplifier un sous système trop complexe.
+						<aside class="notes">
+							Sous système = une partie/module d'un soft <br />
+							Une API ou une librairie trop complexe<br />
+						</aside>
+					</section>
+					<section>
+						<h3>Quand l'utiliser ?</h3>
+						<ul>
+							<li class="fragment">Simplifier la lecture/utilisation d'un sous système</li>
+							<li class="fragment">Refactoring impossible => rétro compatibilité</li>
+							<li class="fragment">Limiter les dépendances entre le client et le sous système</li>
+						</ul>
+						<aside class="notes">
+							/!\ A ne pas mélanger avec l'adapteur qui ,lui, doit respecter une interface bien particulière<br />
+							Facade = vraie volonté de simplification.
+						</aside>
+					</section>
+					<section>
+						<h3>Un peu de théorie</h3>
+						<img src="img/facade-uml.jpg" />
+						<aside class="notes">
+							Ex : Class A et B chacune une méthode. La facade masque la complexité des 2 méthodes.
+						</aside>
+					</section>
+					<section>
+						<h3>En pratique</h3>
+						<img src="img/facade-uml2.jpg" />
+						<aside class="notes">
+							/!\ EX DE CODE APRES : <br />
+							Site de voyage veux simplifier son API pour réserver un voyage complet.<br />
+							Ne veux cependant pas perdre la possiblité des réservations unique<br />
+							
+						</aside>
+					</section>
+					<section>
+						<h3>En pratique</h3>
+						<div class="multiCol">
+							<div class="col fragment">
+								<pre>
+									<code class="java" data-trim>
+Flight f = new Flight();
+f.bookTicket();
+
+Transfert t = new Transfert();
+t.bookCar();
+
+Hotel h = new Hotel();
+h.bookRoom();
+									</code>
+								</pre>
+							</div>
+							<div class="col fragment">
+									<pre>
+											<code class="java" data-trim>
+EasyBooking e = new EasyBooking();
+e.bookTrip();
+											</code>
+										</pre>
+							</div>
+						</div>
+					</section>
+				</section>
+			</section>
 			<section data-background="img/behavior.jpg"><h1>Les patterns comportementaux</h1></section>
 			<section>G.R.A.S.P.</section>
 		</div>
