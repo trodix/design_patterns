@@ -604,6 +604,83 @@ e.bookTrip();
 						</div>
 					</section>
 				</section>
+				<!-- PROXY -->
+				<section>
+					<section data-background="img/proxy.jpg">
+						<h2>Proxy</h2>
+					</section>
+					<section>
+						<h3>Problématique</h3>
+						Controler l'accès à un objet en fournissant un intermédiaire
+						<aside class="notes">
+							Exemple classique : <br />
+							* Objet long à répondre (distant, réseau)<br />
+							* Objet couteux (ram, cpu , etc ...)<br />
+							On veux alors controller les accès qui sont fait.
+						</aside>
+					</section>
+					<section>
+						<h3>Quand l'utiliser ?</h3>
+						<ul>
+							<li class="fragment">Accès à l'objet doit être controller</li>
+							<li class="fragment">Des fonctionnalités supplémentaires sont nécessaires</li>
+							<li class="fragment">Respect de l'interface de l'objet concret</li>
+						</ul>
+						<aside class="notes">
+							Exemple concret : Une classe qui affiche une image. On veux charger en mémoire l'image uniquement si elle est affichée et pas avant.<br />
+							Exemple 2 : Objet distant , on accède à l'objet que quand le réseau est disponible.
+						</aside>
+					</section>
+					<section>
+						<h3>Proxies ...</h3>
+						<ul>
+							<li class="fragment">Virtual</li>
+							<li class="fragment">Remote</li>
+							<li class="fragment">Protection</li>
+							<li class="fragment">Smart reference</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Virtuel : retarde l'initialisation et la création d'objet couteux (ex : chargement d'image à l'affichage)</li>
+								<li>Distant : Appel un objet distant (via le réseau par exemple) de manière transparente.</li>
+								<li>Protection : Autorise ou non l'accès à l'objet réel. (ex : gestion de droit)</li>
+								<li>Smart : Accès intelligent à certains objet en comptant leur référence. (ex : smart pointer en C++)</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h3>Un peu de théorie</h3>
+						<img src="img/proxy-uml.png" />
+						<aside class="notes">
+							
+						</aside>
+					</section>
+					<section>
+						<h3>Decorator vs Proxy</h3>
+						<table>
+							<thead>
+								<tr><td><strong>Decorator</strong></td><td><strong>Proxy</strong></td></tr>
+							</thead>
+							<tbody>
+								<tr><td>Ajout fonctionnalité dynamiquement</td><td> Controle l'accès à l'objet</td></tr>
+								<tr><td>Objet connu du client (constructeur)</td><td>Objet masqué au client</td></tr>
+								<tr><td>Au runtime</td><td>A la compilation</td></tr>
+							</tbody>
+						</table>
+						<aside class="notes">
+							On est très proche du decorator , cependant : 
+							Decorateur : ajout dynamique de fonctionnalité. Objet final<br />
+							Proxy : Controle de l'accès à un objet. Cache l'objet final au client
+						</aside>
+					</section>
+					<section>
+						<h3>Proxy</h3>
+						<img src="img/proxy-uml2.jpg" />
+						<aside class="notes">
+							
+						</aside>
+					</section>
+				</section>
 			</section>
 			<section data-background="img/behavior.jpg"><h1>Les patterns comportementaux</h1></section>
 			<section>G.R.A.S.P.</section>
