@@ -684,6 +684,110 @@ e.bookTrip();
 						</aside>
 					</section>
 				</section>
+				<!-- VALUE OBJECT -->
+				<section>
+					<section data-background="img/valueobject.jpg">
+						<h2>Value Object</h2>
+					</section>
+					<section>
+						<h3>Un cas à part</h3>
+						Petit objet qui représente une petite entité dont l'égalité repose sur la comparaison de ses valeures.
+						<aside class="notes">
+							2 objets sont donc égaaux quand ils ont la même valeur
+						</aside>
+					</section>
+					<section>
+						<h3>Objet Vs Value Object</h3>
+						<img src="img/object.jpg" />
+						<aside class="notes">
+							* 2 objets sont égaux quand ils référence la même zone mémoire.<br />
+							* Une égalité peut éventuellement être faite sur un identifiant<br />
+							* Object value se concentre uniquement sur les valeurs<br />
+							<strong>Object value est immutable (non modifiable)</strong> 
+						</aside>
+					</section>
+					<section>
+						<h3>Intérêts</h3>
+
+						Code plus expressif <br />
+						<pre>
+							<code class="java">
+// Sans :
+Map< Long, String >
+// Avec:
+Map< PersonId, PhoneNumber >
+							</code>
+						</pre>
+					</section>
+					<section>
+							<h3>Intérêts</h3>
+						Code plus sécurisé , erreurs évitées<br />
+						<pre>
+							<code class="java" data-trim>
+Person(String lastName, String email) { ... }
+new Person("John", "Doe"); // compile
+
+Person(LastName lastName, Email email) { ... }
+new Person(
+	new Email("john@doe.com"),
+	new LastName("Doe"));// doesn't compile!
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h3>Intérêts</h3>
+						Fléxibilité interne
+						<pre>
+							<code class="java" data-trim>
+class PersonId {
+	Long id;
+}
+							</code>
+							<code class="java" data-trim>
+class PersonId {
+	String value;
+	public PersonId(Long value) {
+		this.value = value.toString();
+	}
+}
+							</code>
+						</pre>
+						<aside class="notes">
+							Transformation du code sans impacter la partie "cliente"
+						</aside>
+					</section>
+					<section>
+						<h3>Intérêts</h3>
+						Logique embarquée
+						<pre>
+							<code class="java" data-trim>
+class Email {
+	String value;
+	Email(String value) {
+		if (!value.contains("@")) {
+			throw new InvalidEmailException(value);
+		}
+		this.value = value;
+	}
+}
+							</code>
+						</pre>
+						<aside class="notes">
+							Ajoute de logique au type => impossible à faire avec des types standards
+						</aside>
+					</section>
+					<section>
+						<h3>Inconvenients</h3>
+						<ul>
+							<li class="fragment">Nombre de classes dans le projet</li>
+							<li class="fragment">Immutable => Attention aux performances</li>
+						</ul>
+						<aside class="notes">
+							* Peut etre effrayant de prime abord<br />
+							* Une instanciation à un certains coût, l'immutabilité impose la création d'objet dès qu'on veux modifier. Peu dans certains cas être problématique
+						</aside>
+					</section>
+				</section>
 			</section>
 			<section data-background="img/behavior.jpg"><h1>Les patterns comportementaux</h1></section>
 			<section>G.R.A.S.P.</section>
