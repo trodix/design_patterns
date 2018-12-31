@@ -387,201 +387,203 @@ Pizza pizza = new PizzaBuilder()
 				</section>
 			</section>
 			<section data-background="img/structure.jpg"><h1>Les patterns structuraux</h1></section>
-				<section>
-					<section data-background="img/adapter.jpg">
-						<h2>Adapter</h2>
-					</section>
-					<section>
-						<h3>Problématique</h3>
-						Faire fonctionner ensemble des classes aux interfaces incompatible.
-						<aside class="notes">
-							Exemple : Un driver fournis une interface, mais est incompatible avec le besoin du logiciel.<br />
-							==> On doit adapter son comportement.
-						</aside>
-					</section>
-					<section>
-						<h3>Quand l'utiliser ?</h3>
-						<ul>
-							<li class="fragment">Besoin de convertir l'interface d'une classe en quelque chose de compréhensible</li>
-							<li class="fragment">Impossible de modifier l'interface incompatible</li>
-						</ul>
-						<aside class="notes">
-							Si c'est possible on préfèrera toujours adapter le code.<br />
-							Exemple : API pilotage => multi caméra mais API constructeur imposé. Il faut adapter la notre.
-						</aside>
-					</section>
-					<section>
-						<h3>Un peu de théorie</h3>
-						<img src="img/adapter-uml.jpg" />
-						<aside class="notes">
-							
-						</aside>
-					</section>
-					<section>
-						<h3>Tesla vs Renault</h3>
-						<img src="img/adapter-uml2.jpg" />
-						<aside class="notes">
-							Comment sur un supercharger Tesla accepter une Renault.
-							
-						</aside>
-					</section>
+			<section>
+				<section data-background="img/adapter.jpg">
+					<h2>Adapter</h2>
 				</section>
 				<section>
-					<section data-background="img/decorator.jpg">
-						<h2>Decorator</h2>
-						( a.k.a Wrapper )
-					</section>
-					<section>
-						<h3>Problématique</h3>
-						Ajouter des fonctionnalités à une classe dynamiquement.
-						<aside class="notes">
-							DYnamique = à l'execution.
-						</aside>
-					</section>
-					<section>
-						<h3>Quand l'utiliser ?</h3>
-						<ul>
-							<li class="fragment">Ajout de responsabilités optionelles à un objet</li>
-							<li class="fragment">Pas d'héritage</li>
-						</ul>
-						<aside class="notes">
-							Responsabilité optionnelle : <br />
-							=> On doit pouvoir choisir si on utilise ou non les nouvelles responsabilité.<br /><br />
-							Pas d'héritage : <br />
-							* Evite l'héritage fonctionnel. <br />
-							* Manque de souplesse => chaine d'héritage A => B => C , si je veux C je dois tout récupérer. <br />
-							<br />
-							Exemple concret = la gestion des stream java/C# FileWriter,bufferedWriter , etc ...
-						</aside>
-					</section>
-					<section>
-						<h3>Un peu de théorie</h3>
-						<img src="img/decorator-uml.jpg" />
-						<aside class="notes">
-								<ul>
-									<li>Component est une interface qu’implémentent à la fois l’objet décoré et les objets qui le décorent</li>
-									<li>ConcreteComponent représente l’objet décoré (qui implémente Component)</li>
-									<li>Decorator représente l’interface des décorateurs</li>
-									<li>On trouve ensuite les décorateurs concrets (ConcreteDecoratorA, etc.)</li>
-								</ul>
+					<h3>Problématique</h3>
+					Faire fonctionner ensemble des classes aux interfaces incompatible.
+					<aside class="notes">
+						Exemple : Un driver fournis une interface, mais est incompatible avec le besoin du logiciel.<br />
+						==> On doit adapter son comportement.
+					</aside>
+				</section>
+				<section>
+					<h3>Quand l'utiliser ?</h3>
+					<ul>
+						<li class="fragment">Besoin de convertir l'interface d'une classe en quelque chose de compréhensible</li>
+						<li class="fragment">Impossible de modifier l'interface incompatible</li>
+					</ul>
+					<aside class="notes">
+						Si c'est possible on préfèrera toujours adapter le code.<br />
+						Exemple : API pilotage => multi caméra mais API constructeur imposé. Il faut adapter la notre.
+					</aside>
+				</section>
+				<section>
+					<h3>Un peu de théorie</h3>
+					<img src="img/adapter-uml.jpg" />
+					<aside class="notes">
+						
+					</aside>
+				</section>
+				<section>
+					<h3>Tesla vs Renault</h3>
+					<img src="img/adapter-uml2.jpg" />
+					<aside class="notes">
+						Comment sur un supercharger Tesla accepter une Renault.
+						
+					</aside>
+				</section>
+			</section>
+			<section>
+				<section data-background="img/decorator.jpg">
+					<h2>Decorator</h2>
+					( a.k.a Wrapper )
+				</section>
+				<section>
+					<h3>Problématique</h3>
+					Ajouter des fonctionnalités à une classe dynamiquement.
+					<aside class="notes">
+						DYnamique = à l'execution.
+					</aside>
+				</section>
+				<section>
+					<h3>Quand l'utiliser ?</h3>
+					<ul>
+						<li class="fragment">Ajout de responsabilités optionelles à un objet</li>
+						<li class="fragment">Pas d'héritage</li>
+					</ul>
+					<aside class="notes">
+						Responsabilité optionnelle : <br />
+						=> On doit pouvoir choisir si on utilise ou non les nouvelles responsabilité.<br /><br />
+						Pas d'héritage : <br />
+						* Evite l'héritage fonctionnel. <br />
+						* Manque de souplesse => chaine d'héritage A => B => C , si je veux C je dois tout récupérer. <br />
+						<br />
+						Exemple concret = la gestion des stream java/C# FileWriter,bufferedWriter , etc ...
+					</aside>
+				</section>
+				<section>
+					<h3>Un peu de théorie</h3>
+					<img src="img/decorator-uml.jpg" />
+					<aside class="notes">
+							<ul>
+								<li>Component est une interface qu’implémentent à la fois l’objet décoré et les objets qui le décorent</li>
+								<li>ConcreteComponent représente l’objet décoré (qui implémente Component)</li>
+								<li>Decorator représente l’interface des décorateurs</li>
+								<li>On trouve ensuite les décorateurs concrets (ConcreteDecoratorA, etc.)</li>
+							</ul>
 
-							- L'objet concret et son décorateur hérite de la même interface.<br />
-							- L'agregation indique qu'un décorateur peut contenir un "component"<br />
-							- Principale problème => Le type de l'objet sera celui du dernier décorateur utilisé => peut être problématique à gérer.
-						</aside>
-					</section>
-					<section>
-						<h3>Pratique</h3>
-						<img src="img/decorator-uml2.jpg" />
-						<aside class="notes">
-							Exemple JAVA dispo<br />
-							Le but : <br />
-							* Une classe "Moderator" qui censure du text en remplacant certains mots.<br />
-							* On ajoute au fur et à mesure la possibilité de censurer un numéro de téléphone puis un email.<br />
+						- L'objet concret et son décorateur hérite de la même interface.<br />
+						- L'agregation indique qu'un décorateur peut contenir un "component"<br />
+						- Principale problème => Le type de l'objet sera celui du dernier décorateur utilisé => peut être problématique à gérer.
+					</aside>
+				</section>
+				<section>
+					<h3>Pratique</h3>
+					<img src="img/decorator-uml2.jpg" />
+					<aside class="notes">
+						Exemple JAVA dispo<br />
+						Le but : <br />
+						* Une classe "Moderator" qui censure du text en remplacant certains mots.<br />
+						* On ajoute au fur et à mesure la possibilité de censurer un numéro de téléphone puis un email.<br />
 
-							La classe Decorator doit être abstraite.<br />
-							
-						</aside>
-					</section>
+						La classe Decorator doit être abstraite.<br />
+						
+					</aside>
+				</section>
+			</section>
+			<!-- COMPOSITE-->
+			<section>
+				<section data-background="img/composite.jpg">
+					<h2>Composite</h2>
 				</section>
 				<section>
-					<section data-background="img/composite.jpg">
-						<h2>Composite</h2>
-					</section>
-					<section>
-						<h3>Problématique</h3>
-						Gérer une hiérarchie d'objet sans limite de profondeur.
-						<aside class="notes">
-							
-						</aside>
-					</section>
-					<section>
-						<h3>Quand l'utiliser ?</h3>
-						<ul>
-							<li class="fragment">Hierarchie à profondeur indéterminée </li>
-							<li class="fragment">Besoin de traiter un parent ou un enfant de manière identique</li>
-						</ul>
-						<aside class="notes">
-							Chaque élément est un composant potentiel. En plus des éléments classiques, il y a un élément composite qui peut être composé de plusieurs composants. Comme l'élément composite est un composant potentiel, il peut être composé d'autres éléments composites.<br />
-							L'exemple le plus concret => un système de fichier avec dossier/fichier (chacun peut être cliquer).
-						</aside>
-					</section>
-					<section>
-						<h3>Un peu de théorie</h3>
-						<img src="img/composite-uml.jpg" />
-						<aside class="notes">
-							Pattern assez naturel , on l'utilise assez souvent sans le savoir.
-						</aside>
-					</section>
-					<section>
-						<h3>Composite</h3>
-						<img src="img/composite-uml2.jpg" />
-						<aside class="notes">
-							Exemple intellij à refaire.
-							Afficher l'arbo suivante : 
-							
-								-photos<br />
-								&nbsp;|_ 2018<br />
-								&nbsp;&nbsp;|_ dec<br />
-								&nbsp;&nbsp;&nbsp;|_ a.jpg<br />
-								&nbsp;&nbsp;&nbsp;|_ b.jpg<br />
-								&nbsp;|_ 2017<br />
-								&nbsp;&nbsp;|_ c.jpg<br />
-								&nbsp;|_ d.jpg<br />
-							
-						</aside>
-					</section>
+					<h3>Problématique</h3>
+					Gérer une hiérarchie d'objet sans limite de profondeur.
+					<aside class="notes">
+						
+					</aside>
 				</section>
 				<section>
-					<section data-background="img/facade.jpg">
-						<h2>Facade</h2>
-						<aside class="notes">
-							Vous l'avez déjà probablement déjà tous utilisé sans le savoir.
-						</aside>
-					</section>
-					<section>
-						<h3>Problématique</h3>
-						Simplifier un sous système trop complexe.
-						<aside class="notes">
-							Sous système = une partie/module d'un soft <br />
-							Une API ou une librairie trop complexe<br />
-						</aside>
-					</section>
-					<section>
-						<h3>Quand l'utiliser ?</h3>
-						<ul>
-							<li class="fragment">Simplifier la lecture/utilisation d'un sous système</li>
-							<li class="fragment">Refactoring impossible => rétro compatibilité</li>
-							<li class="fragment">Limiter les dépendances entre le client et le sous système</li>
-						</ul>
-						<aside class="notes">
-							/!\ A ne pas mélanger avec l'adapteur qui ,lui, doit respecter une interface bien particulière<br />
-							Facade = vraie volonté de simplification.
-						</aside>
-					</section>
-					<section>
-						<h3>Un peu de théorie</h3>
-						<img src="img/facade-uml.jpg" />
-						<aside class="notes">
-							Ex : Class A et B chacune une méthode. La facade masque la complexité des 2 méthodes.
-						</aside>
-					</section>
-					<section>
-						<h3>En pratique</h3>
-						<img src="img/facade-uml2.jpg" />
-						<aside class="notes">
-							/!\ EX DE CODE APRES : <br />
-							Site de voyage veux simplifier son API pour réserver un voyage complet.<br />
-							Ne veux cependant pas perdre la possiblité des réservations unique<br />
-							
-						</aside>
-					</section>
-					<section>
-						<h3>En pratique</h3>
-						<div class="multiCol">
-							<div class="col fragment">
-								<pre>
-									<code class="java" data-trim>
+					<h3>Quand l'utiliser ?</h3>
+					<ul>
+						<li class="fragment">Hierarchie à profondeur indéterminée </li>
+						<li class="fragment">Besoin de traiter un parent ou un enfant de manière identique</li>
+					</ul>
+					<aside class="notes">
+						Chaque élément est un composant potentiel. En plus des éléments classiques, il y a un élément composite qui peut être composé de plusieurs composants. Comme l'élément composite est un composant potentiel, il peut être composé d'autres éléments composites.<br />
+						L'exemple le plus concret => un système de fichier avec dossier/fichier (chacun peut être cliquer).
+					</aside>
+				</section>
+				<section>
+					<h3>Un peu de théorie</h3>
+					<img src="img/composite-uml.jpg" />
+					<aside class="notes">
+						Pattern assez naturel , on l'utilise assez souvent sans le savoir.
+					</aside>
+				</section>
+				<section>
+					<h3>Composite</h3>
+					<img src="img/composite-uml2.jpg" />
+					<aside class="notes">
+						Exemple intellij à refaire.
+						Afficher l'arbo suivante : 
+						
+							-photos<br />
+							&nbsp;|_ 2018<br />
+							&nbsp;&nbsp;|_ dec<br />
+							&nbsp;&nbsp;&nbsp;|_ a.jpg<br />
+							&nbsp;&nbsp;&nbsp;|_ b.jpg<br />
+							&nbsp;|_ 2017<br />
+							&nbsp;&nbsp;|_ c.jpg<br />
+							&nbsp;|_ d.jpg<br />
+						
+					</aside>
+				</section>
+			</section>
+			<!-- FACADE -->
+			<section>
+				<section data-background="img/facade.jpg">
+					<h2>Facade</h2>
+					<aside class="notes">
+						Vous l'avez déjà probablement déjà tous utilisé sans le savoir.
+					</aside>
+				</section>
+				<section>
+					<h3>Problématique</h3>
+					Simplifier un sous système trop complexe.
+					<aside class="notes">
+						Sous système = une partie/module d'un soft <br />
+						Une API ou une librairie trop complexe<br />
+					</aside>
+				</section>
+				<section>
+					<h3>Quand l'utiliser ?</h3>
+					<ul>
+						<li class="fragment">Simplifier la lecture/utilisation d'un sous système</li>
+						<li class="fragment">Refactoring impossible => rétro compatibilité</li>
+						<li class="fragment">Limiter les dépendances entre le client et le sous système</li>
+					</ul>
+					<aside class="notes">
+						/!\ A ne pas mélanger avec l'adapteur qui ,lui, doit respecter une interface bien particulière<br />
+						Facade = vraie volonté de simplification.
+					</aside>
+				</section>
+				<section>
+					<h3>Un peu de théorie</h3>
+					<img src="img/facade-uml.jpg" />
+					<aside class="notes">
+						Ex : Class A et B chacune une méthode. La facade masque la complexité des 2 méthodes.
+					</aside>
+				</section>
+				<section>
+					<h3>En pratique</h3>
+					<img src="img/facade-uml2.jpg" />
+					<aside class="notes">
+						/!\ EX DE CODE APRES : <br />
+						Site de voyage veux simplifier son API pour réserver un voyage complet.<br />
+						Ne veux cependant pas perdre la possiblité des réservations unique<br />
+						
+					</aside>
+				</section>
+				<section>
+					<h3>En pratique</h3>
+					<div class="multiCol">
+						<div class="col fragment">
+							<pre>
+								<code class="java" data-trim>
 Flight f = new Flight();
 f.bookTicket();
 
@@ -590,206 +592,252 @@ t.bookCar();
 
 Hotel h = new Hotel();
 h.bookRoom();
-									</code>
-								</pre>
-							</div>
-							<div class="col fragment">
-									<pre>
-											<code class="java" data-trim>
+								</code>
+							</pre>
+						</div>
+						<div class="col fragment">
+								<pre>
+										<code class="java" data-trim>
 EasyBooking e = new EasyBooking();
 e.bookTrip();
-											</code>
-										</pre>
-							</div>
+										</code>
+									</pre>
 						</div>
-					</section>
+					</div>
 				</section>
-				<!-- PROXY -->
-				<section>
-					<section data-background="img/proxy.jpg">
-						<h2>Proxy</h2>
-					</section>
-					<section>
-						<h3>Problématique</h3>
-						Controler l'accès à un objet en fournissant un intermédiaire
-						<aside class="notes">
-							Exemple classique : <br />
-							* Objet long à répondre (distant, réseau)<br />
-							* Objet couteux (ram, cpu , etc ...)<br />
-							On veux alors controller les accès qui sont fait.
-						</aside>
-					</section>
-					<section>
-						<h3>Quand l'utiliser ?</h3>
-						<ul>
-							<li class="fragment">Accès à l'objet doit être controller</li>
-							<li class="fragment">Des fonctionnalités supplémentaires sont nécessaires</li>
-							<li class="fragment">Respect de l'interface de l'objet concret</li>
-						</ul>
-						<aside class="notes">
-							Exemple concret : Une classe qui affiche une image. On veux charger en mémoire l'image uniquement si elle est affichée et pas avant.<br />
-							Exemple 2 : Objet distant , on accède à l'objet que quand le réseau est disponible.
-						</aside>
-					</section>
-					<section>
-						<h3>Proxies ...</h3>
-						<ul>
-							<li class="fragment">Virtual</li>
-							<li class="fragment">Remote</li>
-							<li class="fragment">Protection</li>
-							<li class="fragment">Smart reference</li>
-						</ul>
-						<aside class="notes">
-							<ul>
-								<li>Virtuel : retarde l'initialisation et la création d'objet couteux (ex : chargement d'image à l'affichage)</li>
-								<li>Distant : Appel un objet distant (via le réseau par exemple) de manière transparente.</li>
-								<li>Protection : Autorise ou non l'accès à l'objet réel. (ex : gestion de droit)</li>
-								<li>Smart : Accès intelligent à certains objet en comptant leur référence. (ex : smart pointer en C++)</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h3>Un peu de théorie</h3>
-						<img src="img/proxy-uml.png" />
-						<aside class="notes">
-							
-						</aside>
-					</section>
-					<section>
-						<h3>Decorator vs Proxy</h3>
-						<table>
-							<thead>
-								<tr><td><strong>Decorator</strong></td><td><strong>Proxy</strong></td></tr>
-							</thead>
-							<tbody>
-								<tr><td>Ajout fonctionnalité dynamiquement</td><td> Controle l'accès à l'objet</td></tr>
-								<tr><td>Objet connu du client (constructeur)</td><td>Objet masqué au client</td></tr>
-								<tr><td>Au runtime</td><td>A la compilation</td></tr>
-							</tbody>
-						</table>
-						<aside class="notes">
-							On est très proche du decorator , cependant : 
-							Decorateur : ajout dynamique de fonctionnalité. Objet final<br />
-							Proxy : Controle de l'accès à un objet. Cache l'objet final au client
-						</aside>
-					</section>
-					<section>
-						<h3>Proxy</h3>
-						<img src="img/proxy-uml2.jpg" />
-						<aside class="notes">
-							VOIR EXEMPLE<br />
-							Nous avons besoin d'afficher une image.<br />
-							La classe concrète charge l'image dès son instanciation<br />
-							Le proxy permet de controller ce chargement et de l'effectuer uniquement à l'affichage. => Gain de performance<br />
-						</aside>
-					</section>
+			</section>
+			<!-- PROXY -->
+			<section>
+				<section data-background="img/proxy.jpg">
+					<h2>Proxy</h2>
 				</section>
-				<!-- VALUE OBJECT -->
 				<section>
-					<section data-background="img/valueobject.jpg">
-						<h2>Value Object</h2>
-					</section>
-					<section>
-						<h3>Un cas à part</h3>
-						Petit objet qui représente une petite entité dont l'égalité repose sur la comparaison de ses valeures.
-						<aside class="notes">
-							2 objets sont donc égaaux quand ils ont la même valeur
-						</aside>
-					</section>
-					<section>
-						<h3>Objet Vs Value Object</h3>
-						<img src="img/object.jpg" />
-						<aside class="notes">
-							* 2 objets sont égaux quand ils référence la même zone mémoire.<br />
-							* Une égalité peut éventuellement être faite sur un identifiant<br />
-							* Object value se concentre uniquement sur les valeurs<br />
-							<strong>Object value est immutable (non modifiable)</strong> 
-						</aside>
-					</section>
-					<section>
-						<h3>Intérêts</h3>
+					<h3>Problématique</h3>
+					Controler l'accès à un objet en fournissant un intermédiaire
+					<aside class="notes">
+						Exemple classique : <br />
+						* Objet long à répondre (distant, réseau)<br />
+						* Objet couteux (ram, cpu , etc ...)<br />
+						On veux alors controller les accès qui sont fait.
+					</aside>
+				</section>
+				<section>
+					<h3>Quand l'utiliser ?</h3>
+					<ul>
+						<li class="fragment">Accès à l'objet doit être controller</li>
+						<li class="fragment">Des fonctionnalités supplémentaires sont nécessaires</li>
+						<li class="fragment">Respect de l'interface de l'objet concret</li>
+					</ul>
+					<aside class="notes">
+						Exemple concret : Une classe qui affiche une image. On veux charger en mémoire l'image uniquement si elle est affichée et pas avant.<br />
+						Exemple 2 : Objet distant , on accède à l'objet que quand le réseau est disponible.
+					</aside>
+				</section>
+				<section>
+					<h3>Proxies ...</h3>
+					<ul>
+						<li class="fragment">Virtual</li>
+						<li class="fragment">Remote</li>
+						<li class="fragment">Protection</li>
+						<li class="fragment">Smart reference</li>
+					</ul>
+					<aside class="notes">
+						<ul>
+							<li>Virtuel : retarde l'initialisation et la création d'objet couteux (ex : chargement d'image à l'affichage)</li>
+							<li>Distant : Appel un objet distant (via le réseau par exemple) de manière transparente.</li>
+							<li>Protection : Autorise ou non l'accès à l'objet réel. (ex : gestion de droit)</li>
+							<li>Smart : Accès intelligent à certains objet en comptant leur référence. (ex : smart pointer en C++)</li>
+						</ul>
+					</aside>
+				</section>
+				<section>
+					<h3>Un peu de théorie</h3>
+					<img src="img/proxy-uml.png" />
+					<aside class="notes">
+						
+					</aside>
+				</section>
+				<section>
+					<h3>Decorator vs Proxy</h3>
+					<table>
+						<thead>
+							<tr><td><strong>Decorator</strong></td><td><strong>Proxy</strong></td></tr>
+						</thead>
+						<tbody>
+							<tr><td>Ajout fonctionnalité dynamiquement</td><td> Controle l'accès à l'objet</td></tr>
+							<tr><td>Objet connu du client (constructeur)</td><td>Objet masqué au client</td></tr>
+							<tr><td>Au runtime</td><td>A la compilation</td></tr>
+						</tbody>
+					</table>
+					<aside class="notes">
+						On est très proche du decorator , cependant : 
+						Decorateur : ajout dynamique de fonctionnalité. Objet final<br />
+						Proxy : Controle de l'accès à un objet. Cache l'objet final au client
+					</aside>
+				</section>
+				<section>
+					<h3>Proxy</h3>
+					<img src="img/proxy-uml2.jpg" />
+					<aside class="notes">
+						VOIR EXEMPLE<br />
+						Nous avons besoin d'afficher une image.<br />
+						La classe concrète charge l'image dès son instanciation<br />
+						Le proxy permet de controller ce chargement et de l'effectuer uniquement à l'affichage. => Gain de performance<br />
+					</aside>
+				</section>
+			</section>
+			<!-- VALUE OBJECT -->
+			<section>
+				<section data-background="img/valueobject.jpg">
+					<h2>Value Object</h2>
+				</section>
+				<section>
+					<h3>Un cas à part</h3>
+					Petit objet qui représente une petite entité dont l'égalité repose sur la comparaison de ses valeures.
+					<aside class="notes">
+						2 objets sont donc égaaux quand ils ont la même valeur
+					</aside>
+				</section>
+				<section>
+					<h3>Objet Vs Value Object</h3>
+					<img src="img/object.jpg" />
+					<aside class="notes">
+						* 2 objets sont égaux quand ils référence la même zone mémoire.<br />
+						* Une égalité peut éventuellement être faite sur un identifiant<br />
+						* Object value se concentre uniquement sur les valeurs<br />
+						<strong>Object value est immutable (non modifiable)</strong> 
+					</aside>
+				</section>
+				<section>
+					<h3>Intérêts</h3>
 
-						Code plus expressif <br />
-						<pre>
-							<code class="java">
+					Code plus expressif <br />
+					<pre>
+						<code class="java">
 // Sans :
 Map< Long, String >
 // Avec:
 Map< PersonId, PhoneNumber >
-							</code>
-						</pre>
-					</section>
-					<section>
-							<h3>Intérêts</h3>
-						Code plus sécurisé , erreurs évitées<br />
-						<pre>
-							<code class="java" data-trim>
+						</code>
+					</pre>
+				</section>
+				<section>
+						<h3>Intérêts</h3>
+					Code plus sécurisé , erreurs évitées<br />
+					<pre>
+						<code class="java" data-trim>
 Person(String lastName, String email) { ... }
 new Person("John", "Doe"); // compile
 
 Person(LastName lastName, Email email) { ... }
 new Person(
-	new Email("john@doe.com"),
-	new LastName("Doe"));// doesn't compile!
-							</code>
-						</pre>
-					</section>
-					<section>
-						<h3>Intérêts</h3>
-						Fléxibilité interne
-						<pre>
-							<code class="java" data-trim>
+new Email("john@doe.com"),
+new LastName("Doe"));// doesn't compile!
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Intérêts</h3>
+					Fléxibilité interne
+					<pre>
+						<code class="java" data-trim>
 class PersonId {
-	Long id;
+Long id;
 }
-							</code>
-							<code class="java" data-trim>
+						</code>
+						<code class="java" data-trim>
 class PersonId {
-	String value;
-	public PersonId(Long value) {
-		this.value = value.toString();
-	}
+String value;
+public PersonId(Long value) {
+	this.value = value.toString();
 }
-							</code>
-						</pre>
-						<aside class="notes">
-							Transformation du code sans impacter la partie "cliente"
-						</aside>
-					</section>
-					<section>
-						<h3>Intérêts</h3>
-						Logique embarquée
-						<pre>
-							<code class="java" data-trim>
+}
+						</code>
+					</pre>
+					<aside class="notes">
+						Transformation du code sans impacter la partie "cliente"
+					</aside>
+				</section>
+				<section>
+					<h3>Intérêts</h3>
+					Logique embarquée
+					<pre>
+						<code class="java" data-trim>
 class Email {
-	String value;
-	Email(String value) {
-		if (!value.contains("@")) {
-			throw new InvalidEmailException(value);
-		}
-		this.value = value;
+String value;
+Email(String value) {
+	if (!value.contains("@")) {
+		throw new InvalidEmailException(value);
 	}
+	this.value = value;
 }
-							</code>
-						</pre>
-						<aside class="notes">
-							Ajoute de logique au type => impossible à faire avec des types standards
-						</aside>
-					</section>
-					<section>
-						<h3>Inconvenients</h3>
-						<ul>
-							<li class="fragment">Nombre de classes dans le projet</li>
-							<li class="fragment">Immutable => Attention aux performances</li>
-						</ul>
-						<aside class="notes">
-							* Peut etre effrayant de prime abord<br />
-							* Une instanciation à un certains coût, l'immutabilité impose la création d'objet dès qu'on veux modifier. Peu dans certains cas être problématique
-						</aside>
-					</section>
+}
+						</code>
+					</pre>
+					<aside class="notes">
+						Ajoute de logique au type => impossible à faire avec des types standards
+					</aside>
+				</section>
+				<section>
+					<h3>Inconvenients</h3>
+					<ul>
+						<li class="fragment">Nombre de classes dans le projet</li>
+						<li class="fragment">Immutable => Attention aux performances</li>
+					</ul>
+					<aside class="notes">
+						* Peut etre effrayant de prime abord<br />
+						* Une instanciation à un certains coût, l'immutabilité impose la création d'objet dès qu'on veux modifier. Peu dans certains cas être problématique
+					</aside>
 				</section>
 			</section>
 			<section data-background="img/behavior.jpg"><h1>Les patterns comportementaux</h1></section>
+			<section>
+				<section data-background="img/iterator.jpg">
+					<h2>Iterator</h2>
+				</section>
+				<section>
+					<h3>Problématique</h3>
+					Un objet complexe doit être traversable sans exposer sa représentation.
+					<aside class="notes">
+						Traversable = itérable = je peux faire une boucle.<br />
+						Les exemples les plus connus : List , Vector , HashMap, etc ...
+					</aside>
+				</section>
+				<section>
+					<h3>Quand l'utiliser ?</h3>
+					<ul>
+						<li class="fragment">Besoin de parcourir des objets </li>
+						<li class="fragment">Besoin d'un moyen homogène d'itération entre plusieurs objets</li>
+					</ul>
+					<aside class="notes">
+						Homogène = tous les itérateurs on la même interface.<br />
+						Très souvent on ne créer pas d'itérateur , on utilse ceux mis à notre disposition.
+					</aside>
+				</section>
+				<section>
+					<h3>Un peu de théorie</h3>
+					<img src="img/iterator-uml.png" />
+					<aside class="notes">
+						<ul>
+							<li><strong>Aggregate</strong> : définit l'interface d'un objet composé permettant de créer un Iterateur.</li>
+							<li><strong>ConcreteAggregate</strong> : sous-classe de l'interface Aggregate. Elle est composée d'éléments et implémente la méthode de création d'un Iterateur.</li>
+						</ul>
+						De prime abord Aggregate peut sembler superflue => utile si plusieurs classes<br />
+						<ul>
+							<li><strong>Iterator</strong> : définit l'interface de l'itérateur, qui permet d'accéder aux éléments de l'objet Aggregate.</li>
+							<li><strong>ConcreteIterator</strong> : fournit une implémentation permettant de parcourir les éléments de ConcreteAggregate. Elle conserve la trace de la position courante.</li>
+						</ul>
+					</aside>
+				</section>
+				<section>
+					<h3>Iterator</h3>
+					<img src="img/iterator-uml2.png" />
+					<aside class="notes">
+						Voir EXEMPLE.<br />
+						Très souvent les interfaces iterable et iterator peuvent être fournie par le langage. Elle sont génériques.
+					</aside>
+				</section>
+			</section>
 			<section>G.R.A.S.P.</section>
 		</div>
 	</div>
