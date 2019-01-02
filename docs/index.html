@@ -838,6 +838,53 @@ Email(String value) {
 					</aside>
 				</section>
 			</section>
+			<section>
+				<section data-background="img/strategy.jpg">
+					<h2>Strategy</h2>
+				</section>
+				<section>
+					<h3>Problématique</h3>
+					Pouvoir choisir dynamiquement un algorithme
+					<aside class="notes">
+						En d'autre terme réaliser différentes opérations avec un seul et même objet.
+					</aside>
+				</section>
+				<section>
+					<h3>Quand l'utiliser ?</h3>
+					<ul>
+						<li class="fragment">Plusieurs algorithmes similaires </li>
+						<li class="fragment">Limitation des responsabilités et inversion de dépendance </li>
+					</ul>
+					<aside class="notes">
+						* La même action de manière différente<br />
+						* on évite d'ajouter des responsabilité en ajoutant méthodes à une classe. On dépend de l'interface et non des classes concrete.<br /><br />
+						Respect de SOLID  : <br />
+						* (Single responsability, <br />
+						* Open close (ouvert à l'extension, fermer à la modif),<br />
+						* Liskov substitution (pouvoir remplacer une instance par un type dérivé);<br />
+						* Interface segregation : préféré plusieurs interface spécifique à une seule grosse<br />
+						* Dependency Inversion.<br /><br />
+						Exemple : Un traitement d'image, choisi un algorithme en fonction d'un critère : rapidité ou qualité du résultat.
+					</aside>
+				</section>
+				<section>
+					<h3>Un peu de théorie</h3>
+					<img src="img/strategy-uml.png" />
+					<aside class="notes">
+						* Une interface strategy qui défini le comportement
+						* X implémentation concrète.
+						* Une classe qui utilise la stratégie qu'on lui donne.
+					</aside>
+				</section>
+				<section>
+					<h3>Strategy</h3>
+					<img src="img/strategy-uml2.png" />
+					<aside class="notes">
+						Cas réel , traitement d'image pour trouver des visages<br />
+						Voir EXEMPLE
+					</aside>
+				</section>
+			</section>
 			<section>G.R.A.S.P.</section>
 		</div>
 	</div>
