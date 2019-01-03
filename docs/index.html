@@ -838,6 +838,7 @@ Email(String value) {
 					</aside>
 				</section>
 			</section>
+			<!-- STRATEGY -->
 			<section>
 				<section data-background="img/strategy.jpg">
 					<h2>Strategy</h2>
@@ -882,6 +883,53 @@ Email(String value) {
 					<aside class="notes">
 						Cas réel , traitement d'image pour trouver des visages<br />
 						Voir EXEMPLE
+					</aside>
+				</section>
+			</section>
+			<!-- TEMPLATE METHODE -->
+			<section>
+				<section data-background="img/template.jpg">
+					<h2>Template method</h2>
+				</section>
+				<section>
+					<h3>Problématique</h3>
+					Définir le squelette d'un algorithme en déléguant certaines étapes à des sous-classes.
+					<aside class="notes">
+						Probablement un des des DP les plus simples.<br />
+						On l'implémente souvent sans le savoir.
+					</aside>
+				</section>
+				<section>
+					<h3>Quand l'utiliser ?</h3>
+					<ul>
+						<li class="fragment">Un fonctionnement global commun </li>
+						<li class="fragment">Des particularités à gérer par des sous classes </li>
+					</ul>
+					<aside class="notes">
+						Exemple : Génération d'un document : <br />
+						- Besoin d'une entête, d'un corps , d'un pied de page. => fonctionnement global<br />
+						- Le contenu de ces section differt selon le type de doc => particularités
+					</aside>
+				</section>
+				<section>
+					<h3>Un peu de théorie</h3>
+					<img src="img/template-uml.png" />
+					<aside class="notes">
+						On est très proche de STRATEGY<br />
+						* Template est à utiliser quand l'algoritme ne change pas (juste son implémentation).<br />
+						* Quand le choix de l'implémentation est fait à la compilation et non dynamiquement<br /><br />
+						Un classe abstraite défini l'algorithme.<br />
+						Des méthodes abstraites<br />
+						Une méthode "template" qui appel les methodes abstraites<br />
+
+						On implémente ensuite les méthodes abstraites.
+					</aside>
+				</section>
+				<section>
+					<h3>Template method</h3>
+					<img src="img/template-uml2.png" />
+					<aside class="notes">
+						Génération de 2 document.
 					</aside>
 				</section>
 			</section>
