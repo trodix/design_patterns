@@ -933,6 +933,51 @@ Email(String value) {
 					</aside>
 				</section>
 			</section>
+			<!-- STATE -->
+			<section>
+				<section data-background="img/state.jpg">
+					<h2>State</h2>
+				</section>
+				<section>
+					<h3>Problématique</h3>
+					Changer le comportement d'un objet en selon son état interne.
+					<aside class="notes">
+						C'est un design pattern dérivé des machines à état.<br />
+						Machine à état assez courant en informatique embarquée / electronique.<br />
+						Dans le JV aussi , bonne alternative au réseau de neurone pour la prise de décision.<br />
+					</aside>
+				</section>
+				<section>
+					<h3>Quand l'utiliser ?</h3>
+					<ul>
+						<li class="fragment">Isolation des algo propre à chaque état </li>
+						<li class="fragment">Modification de l'instance et non recréation </li>
+						<li class="fragment">Masquage de la complexité </li>
+					</ul>
+					<aside class="notes">
+						State peut être replacer par if/else => pas éléguant et lourd si beaucoup d'état<br />
+						Recréation d'objet (avec param par ex) => Pas efficient et pas éléguant.
+					</aside>
+				</section>
+				<section>
+					<h3>Un peu de théorie</h3>
+					<img src="img/state-uml.png" />
+					<aside class="notes">
+						* Un interface d'état définissant les actions possible<br />
+						* Des implémentations d'état<br />
+						* Un objet utilisant un état.<br />
+						Quand on change l'état l'implémentation change et donc le comportement.
+					</aside>
+				</section>
+				<section>
+					<h3>Bus à état</h3>
+					<img src="img/state-uml2.png" />
+					<aside class="notes">
+						Exemple du Bus avec ses arrets<br />
+						Expliquer les différents états et actions possible.
+					</aside>
+				</section>
+			</section>
 			<section>G.R.A.S.P.</section>
 		</div>
 	</div>
