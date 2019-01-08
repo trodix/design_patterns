@@ -978,6 +978,55 @@ Email(String value) {
 					</aside>
 				</section>
 			</section>
+			<!-- OBSERVER -->
+			<section>
+				<section data-background="img/observer.jpg">
+					<h2>Observer</h2>
+				</section>
+				<section>
+					<h3>Problématique</h3>
+					Notifier un ensemble d'objet d'un changement d'état
+					<aside class="notes">
+						Par exemple réponse à un événemnt click.<br />
+					</aside>
+				</section>
+				<section>
+					<h3>Quand l'utiliser ?</h3>
+					<ul>
+						<li class="fragment">Besoin d'informer un ou plusieurs objet immédiatement </li>
+						<li class="fragment">Limiter le couplage </li>
+					</ul>
+					<aside class="notes">
+						Couplage limité = L'objet observé n'est pas responsable de ce qui passe dans les objets observant.
+					</aside>
+				</section>
+				<section>
+					<h3>Utiliser l'existant</h3>
+					<ul>
+						<li>Java : Observable</li>
+						<li>C# : IObservable</li>
+						<li>C++ : boost::signals2 ou QT signal/slot</li>
+						<li>PHP : SplSubject</li>
+						<li>...</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Un peu de théorie</h3>
+					<img src="img/observer-uml.png" />
+					<aside class="notes">
+						Observer : Interface définissant la fonction que devra appeller l'objet observable.<br />
+						ObserverA/B : Implémentation concrete<br />
+						Subjet (observable) : Peut être une interface (cf celle des langages). Contient les observers et les gères.
+					</aside>
+				</section>
+				<section>
+					<h3>Diffusion de news</h3>
+					<img src="img/observer-uml2.png" />
+					<aside class="notes">
+						Exemple concret avec l'AFP qui diffuse des news au journaux
+					</aside>
+				</section>
+			</section>
 			<section>G.R.A.S.P.</section>
 		</div>
 	</div>
