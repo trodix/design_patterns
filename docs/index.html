@@ -1027,6 +1027,52 @@ Email(String value) {
 					</aside>
 				</section>
 			</section>
+			<!-- MEDIATOR -->
+			<section>
+				<section data-background="img/mediator.jpg">
+					<h2>Mediator</h2>
+				</section>
+				<section>
+					<h3>Problématique</h3>
+					Gérer l'intéraction de différents objets entre eux en limitant leur couplage.
+					<aside class="notes">
+						Permettre à des objets d'avoir un effet les uns sur les autres tout en restant indépendant.<br />
+						==> Réutilisabilité des objets 
+					</aside>
+				</section>
+				<section>
+					<h3>Quand l'utiliser ?</h3>
+					<ul>
+						<li class="fragment">Ensemble d'objet devant intéragir ensemble</li>
+						<li class="fragment">Pas de couplage entre ces objets</li>
+						<li class="fragment">Pouvoir varier l'intéraction des objets indépendamment</li>
+					</ul>
+					<aside class="notes">
+						DP couramment utilisé dans les interface graphique : <br />
+						Le clic sur un élément d'UI en fait apparaitre ou disparaitre un autre.
+					</aside>
+				</section>
+				<section>
+					<h3>Un peu de théorie</h3>
+					<img src="img/mediator-uml.png" />
+					<aside class="notes">
+						<strong>Collegue</strong> : définit l'interface d'un collègue. Il s'agit d'une famille d'objets qui s'ignorent entre eux mais qui doivent se transmettre des informations.<br />
+						<strong>ConcreteColleagueA et ConcreteColleagueB</strong> : sont des sous-classes concrètes de l'interface Collegue. Elles ont une référence sur un objet Mediateur auquel elles transmettront les informations.<br />
+						<strong>Mediator</strong> : définit l'interface de communication entre les objets Colleague.<br />
+						<strong>ConcreteMediateur</strong> : implémente la communication et maintient une référence sur les objets Collegue.<br />
+						/!\ Attention aux référence circulaire qui pourrait intervenir.<br />
+					</aside>
+				</section>
+				<section>
+					<h3>UI Mediator</h3>
+					<img src="img/mediator-uml2.png" />
+					<aside class="notes">
+						Exemple d'élément d'une UI qui interagisse entre eux sans pour autant être couplé.<br />
+						ON peut tout à fait modifier le comportement juste en changeant le mediateur.<br />
+						===> A faire faire que si temps.
+					</aside>
+				</section>
+			</section>
 			<section>G.R.A.S.P.</section>
 		</div>
 	</div>
