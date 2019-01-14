@@ -1073,7 +1073,161 @@ Email(String value) {
 					</aside>
 				</section>
 			</section>
-			<section>G.R.A.S.P.</section>
+			<!-- VISITOR -->
+			<section>
+				<section data-background="img/visitor.jpg">
+					<h2>Visitor</h2>
+				</section>
+				<section>
+					<h3>Problématique</h3>
+					Séparer les données de leur traitement
+					<aside class="notes">
+						L'exemple le plus courant est la réalisation de rapport (par exemple pour la BI).<br />
+						Une classe gère les données , et on veux générer un rapport à partir de ses données sans ajouter de méthode.
+					</aside>
+				</section>
+				<section>
+					<h3>Quand l'utiliser ?</h3>
+					<ul>
+						<li class="fragment">Classe privée</li>
+						<li class="fragment">Externaliser et centraliser des actions à réaliser sur des objets</li>
+					</ul>
+					<aside class="notes">
+						<ul>
+							<li>Impossible d'ajouter des fonctionnalitée à la classe</li>
+							<li>Pratique si une même données peut être traitée de facon différente</li>
+						</ul>
+					</aside>
+				</section>
+				<section>
+					<h3>Un peu de théorie</h3>
+					<img src="img/visitor-uml.png" />
+					<aside class="notes">
+						Ce n'est pas le diagramme exact. On le trouve sur internet avec une classe qui contient un ensemble d'élément visitable.<br />
+						Pas nécessaire pour la compréhension.<br />
+						<br />
+						Visitable => interface des objet pouvant accepter un visiteur
+						Visitor => Interface pour tout objet souhaitant en visiter d'autre. Doit fournir une méthode par type d'objet visitable.
+					</aside>
+				</section>
+				<section>
+					<h3>Debugger</h3>
+					<img src="img/visitor-uml2.png" />
+					<aside class="notes">
+						On souhaite ajouter des informations de debug (trace) à une classe fermée mais qui accepte un visiteur.<br />
+						UserDebugger va avoir accès à toutes les infos publique de User<br />
+						Voir exemple<br />
+					</aside>
+				</section>
+			</section>
+			<!-- GRASP -->
+			<section>
+				<section>
+					<h2>G.R.A.S.P.</h2>
+					<aside class="notes">
+						General Responsability Assignement Software Patterns<br />
+						Ces patrons de conception donnent des conseils généraux sur l'assignation de responsabilité aux classes dans une application. <br />
+						Ils sont issus du bon sens de conception => bonne pratiques.<br /><br />
+
+						Fil rouge : Magasin et Catalogue
+					</aside>
+				</section>
+				<section>
+					<h2>Information expert</h2>
+					<p>Assigner la responsabilité d'une tache à la classe qui détient l'information</p>
+					<aside class="notes">
+						Exemple : classe Magasin et Catalogue. On veut retoruner un produit en fonction de sa référence. On la placera dans catalogue. C'est lui qui a l'info.
+					</aside>
+				</section>
+				<section>
+					<h2>Creator</h2>
+					<p>Déterminer quelle classe a la responsabilité de créer des instances d'une autre classe.</p>
+					<aside class="notes">
+						Responsabilité de créer une instance si : <br />
+						<ul>
+							<li>Une classe A agrége des instances de la classe B</li>
+							<li>Une classe A contient des instances de la classe B</li>
+							<li>Une classe A utilise des instances d'une classe B</li>
+							<li>Une classe A possède les données nécessaires à l'initialisation des instance de classe B, etc.</li>
+						</ul>
+						<br />
+						Exemple Magasin contient un catalogue => Magasin instancie catalogue.<br />
+						/!\ On peut entrer en conflit avec le pattern de couplage faible.
+					</aside>
+				</section>
+				<section>
+					<h2>Low coupling</h2>
+					<p>Diminuer le couplage entre les classes</p>
+					<ul>
+						<li>Moins sensible à la modification</li>
+						<li>Réutilisable</li>
+					</ul>
+					<aside class="notes">
+						Un couplage fort = un héritage. Ou une instanciation de classe.<br />
+						Si couplage fort => une modification d'une classe risque d'agir sur l'autre.<br />
+						/!\ A ne pas en abuser pour ne pas perdre la cohésion de l'ensemble du code. Si tout est indépendant la compréhension est difficile.
+					</aside>
+				</section>
+				<section>
+					<h2>High Cohesion</h2>
+					<p>Responsabilités cohérentes et non variées</p>
+					<aside class="notes">
+						Eviter les classes qui font tout et n'importe quoi.<br />
+						Facilite la compréhension , la maintenabilité et la réutilisation.<br />
+						EX : La classe Catalogue ne vas pas avoir une méthode facturer();
+					</aside>
+				</section>
+				<section>
+					<h2>Controller</h2>
+					<p>Réception et/ou traitement de message</p>
+					<aside class="notes">
+						Message = sens large , peut être tout et n'importe quoi.<br />
+						Exemple le plus courant : MVC (à expliquer)
+
+					</aside>
+				</section>
+				<section>
+					<h2>Polymorphisme</h2>
+					<p>Affecter un nouveau comportement en fonction du type</p>
+					<pre>
+							<code class="java" data-trim>
+class B extends A {
+	method() {
+		super(); // Appel de A#method();
+		doSomethingElse(); // Nouveau comportement
+	}
+}
+							</code>
+						</pre>
+						<aside class="notes">
+							Possible également dans les constructeur.<br />
+							Sans polymorphisme = if/else ou switch case à profusion.
+						</aside>
+				</section>
+			</section>
+			<!-- CONCLUSION -->
+			<section>
+				<section data-background="img/conclusion.jpg">
+					<h2>Conclusion</h2>
+				</section>
+				<section>
+					<ul>
+						<li class="fragment">Solution gracieuse à beaucoup de problèmes</li>
+						<li class="fragment">Si nécessaire</li>
+						<li class="fragment"><img width="24px" height="24px" src="img/warning.png" style="border: none;margin:0;background: none;" />Over
+							engineering</li>
+						<li>Bonnes pratiques > Design pattern</li>
+					</ul>
+					<aside class="notes">
+						<ul>
+							<li>Toujours les avoirs dans un coin de la tête</li>
+							<li>Tendre vers les DP , après refactoring</li>
+							<li>Trop de DP tue le DP</li>
+							<li>Avis perso , mais les BP sont souvent suffisantes.</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
 		</div>
 	</div>
 

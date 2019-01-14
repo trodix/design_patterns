@@ -13,4 +13,5 @@ https://fr.wikipedia.org/wiki/Fabrique_abstraite
 https://blog.cellenza.com/uncategorized/abstract-factory-fabrique-abstraite/
 https://medium.com/@hitherejoe/design-patterns-abstract-factory-39a22985bdbf
 https://www.oodesign.com/proxy-pattern.html
+https://wpetrus.developpez.com/uml/grasp/
 #1f2224
