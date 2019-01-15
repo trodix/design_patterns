@@ -37,7 +37,7 @@
 					<h1 class="bandeau">Design Patterns</h1>
 				</section>
 				<section>
-					<h2>Qui suis je ?</h2>
+					<h2>Qui suis-je ?</h2>
 					<p>Développeur & Architecte @ Pryntec</p>
 					<p>+10 XP</p>
 					<p>Expert PHP, Senior Android, C++, JS , BDD, etc ...</p>
@@ -77,8 +77,8 @@
 				<section data-background="img/architect.jpg">
 					<h2>Historique</h2>
 					<ul>
-						<li>Monde du batiment</li>
-						<li>Problème récurrents</li>
+						<li>Monde du bâtiment</li>
+						<li>Problèmes récurrents</li>
 						<li>Patron de conception = solution à un problème</li>
 						<li>Aide à la décision</li>
 					</ul>
@@ -186,7 +186,7 @@
 					<p>Une seule instance d'une classe peut exister</p>
 					<ul>
 						<li class="fragment">Ressource système</li>
-						<li class="fragment">Class d'application</li>
+						<li class="fragment">Classe d'application</li>
 						<li class="fragment">Gestion de journaux <sup>*</sup></li>
 					</ul>
 					<aside class="notes">
@@ -198,7 +198,7 @@
 				<section>
 					<h3>Conséquences</h3>
 					<ul>
-						<li class="fragment">Controle l'unicité d'instance d'une classe</li>
+						<li class="fragment">Contrôle l'unicité d'instance d'une classe</li>
 						<li class="fragment">Induit des problèmes de thread safety</li>
 					</ul>
 					<aside class="notes">Dans un environnement multi threadé , on risque de casser l'unicité d'instance. Voir plus tard exemple</aside>
@@ -274,7 +274,7 @@ public class Singleton {
 				</section>
 				<section>
 					<h3>Problématique</h3>
-					<p>Fournir différents objets d'une même famille sans connaitre leur implémentation concrète</p>
+					<p>Fournir différents objets d'une même famille sans connaître leur implémentation concrète</p>
 					<aside class="notes">
 						
 					</aside>
@@ -285,7 +285,7 @@ public class Singleton {
 					<ul>
 						<li class="fragment">Objets regroupés en famille (UI , Documents)</li>
 						<li class="fragment">Eviter les couplages forts</li>
-						<li class="fragment">Masquer la complexiter d'instanciation</li>
+						<li class="fragment">Masquer la complexité d'instanciation</li>
 					</ul>
 					<aside class="notes">
 						* Ui : Famille windows/linux; Document : Style moderne/classique
@@ -333,7 +333,7 @@ public class Singleton {
 				<section>
 					<h3>Quand l'utiliser ?</h3>
 					<ul>
-						<li class="fragment">Données de construction incomplète</li>
+						<li class="fragment">Données de construction incomplètes</li>
 						<li class="fragment">Simplification de classe : limiter les constructeurs</li>
 					</ul>
 					<aside class="notes">
@@ -393,7 +393,7 @@ Pizza pizza = new PizzaBuilder()
 				</section>
 				<section>
 					<h3>Problématique</h3>
-					Faire fonctionner ensemble des classes aux interfaces incompatible.
+					Faire fonctionner ensemble des classes aux interfaces incompatibles.
 					<aside class="notes">
 						Exemple : Un driver fournis une interface, mais est incompatible avec le besoin du logiciel.<br />
 						==> On doit adapter son comportement.
@@ -491,7 +491,7 @@ Pizza pizza = new PizzaBuilder()
 				</section>
 				<section>
 					<h3>Problématique</h3>
-					Gérer une hiérarchie d'objet sans limite de profondeur.
+					Gérer une hiérarchie d'objets sans limite de profondeur.
 					<aside class="notes">
 						
 					</aside>
@@ -613,7 +613,7 @@ e.bookTrip();
 				</section>
 				<section>
 					<h3>Problématique</h3>
-					Controler l'accès à un objet en fournissant un intermédiaire
+					Contrôler l'accès à un objet en fournissant un intermédiaire
 					<aside class="notes">
 						Exemple classique : <br />
 						* Objet long à répondre (distant, réseau)<br />
@@ -624,7 +624,7 @@ e.bookTrip();
 				<section>
 					<h3>Quand l'utiliser ?</h3>
 					<ul>
-						<li class="fragment">Accès à l'objet doit être controller</li>
+						<li class="fragment">Accès à l'objet doit être contrôler</li>
 						<li class="fragment">Des fonctionnalités supplémentaires sont nécessaires</li>
 						<li class="fragment">Respect de l'interface de l'objet concret</li>
 					</ul>
@@ -664,7 +664,7 @@ e.bookTrip();
 							<tr><td><strong>Decorator</strong></td><td><strong>Proxy</strong></td></tr>
 						</thead>
 						<tbody>
-							<tr><td>Ajout fonctionnalité dynamiquement</td><td> Controle l'accès à l'objet</td></tr>
+							<tr><td>Ajout fonctionnalité dynamiquement</td><td> Contrôle l'accès à l'objet</td></tr>
 							<tr><td>Objet connu du client (constructeur)</td><td>Objet masqué au client</td></tr>
 							<tr><td>Au runtime</td><td>A la compilation</td></tr>
 						</tbody>
@@ -779,7 +779,7 @@ Email(String value) {
 					</aside>
 				</section>
 				<section>
-					<h3>Inconvenients</h3>
+					<h3>Inconvénients</h3>
 					<ul>
 						<li class="fragment">Nombre de classes dans le projet</li>
 						<li class="fragment">Immutable => Attention aux performances</li>
@@ -940,7 +940,7 @@ Email(String value) {
 				</section>
 				<section>
 					<h3>Problématique</h3>
-					Changer le comportement d'un objet en selon son état interne.
+					Changer le comportement d'un objet en fonction de son état interne.
 					<aside class="notes">
 						C'est un design pattern dérivé des machines à état.<br />
 						Machine à état assez courant en informatique embarquée / electronique.<br />
@@ -950,7 +950,7 @@ Email(String value) {
 				<section>
 					<h3>Quand l'utiliser ?</h3>
 					<ul>
-						<li class="fragment">Isolation des algo propre à chaque état </li>
+						<li class="fragment">Isolation des algorithmes propres à chaque état </li>
 						<li class="fragment">Modification de l'instance et non recréation </li>
 						<li class="fragment">Masquage de la complexité </li>
 					</ul>
@@ -985,7 +985,7 @@ Email(String value) {
 				</section>
 				<section>
 					<h3>Problématique</h3>
-					Notifier un ensemble d'objet d'un changement d'état
+					Notifier un ensemble d'objets d'un changement d'état
 					<aside class="notes">
 						Par exemple réponse à un événemnt click.<br />
 					</aside>
@@ -993,7 +993,7 @@ Email(String value) {
 				<section>
 					<h3>Quand l'utiliser ?</h3>
 					<ul>
-						<li class="fragment">Besoin d'informer un ou plusieurs objet immédiatement </li>
+						<li class="fragment">Besoin d'informer un ou plusieurs objets immédiatement </li>
 						<li class="fragment">Limiter le couplage </li>
 					</ul>
 					<aside class="notes">
@@ -1043,7 +1043,7 @@ Email(String value) {
 				<section>
 					<h3>Quand l'utiliser ?</h3>
 					<ul>
-						<li class="fragment">Ensemble d'objet devant intéragir ensemble</li>
+						<li class="fragment">Ensemble d'objets devant intéragir ensemble</li>
 						<li class="fragment">Pas de couplage entre ces objets</li>
 						<li class="fragment">Pouvoir varier l'intéraction des objets indépendamment</li>
 					</ul>
@@ -1134,7 +1134,7 @@ Email(String value) {
 				</section>
 				<section>
 					<h2>Information expert</h2>
-					<p>Assigner la responsabilité d'une tache à la classe qui détient l'information</p>
+					<p>Assigner la responsabilité d'une tâche à la classe qui détient l'information</p>
 					<aside class="notes">
 						Exemple : classe Magasin et Catalogue. On veut retoruner un produit en fonction de sa référence. On la placera dans catalogue. C'est lui qui a l'info.
 					</aside>
@@ -1216,7 +1216,7 @@ class B extends A {
 						<li class="fragment">Si nécessaire</li>
 						<li class="fragment"><img width="24px" height="24px" src="img/warning.png" style="border: none;margin:0;background: none;" />Over
 							engineering</li>
-						<li>Bonnes pratiques > Design pattern</li>
+						<li class="fragment">Bonnes pratiques > Design pattern</li>
 					</ul>
 					<aside class="notes">
 						<ul>
