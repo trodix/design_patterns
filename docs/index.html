@@ -356,6 +356,7 @@ public class Singleton {
 					<ul>
 						<li>Attention à faire la différence. Fabrique = bonne pratique. Pas un DP</li>
 						<li>Abstract factory permet une évolutivité plus simple</li>
+						<li>Abstract factory  = fabrique de fabrique</li>
 					</ul>
 					<aside class="notes">
 						* Beaucoup moins de code à changer si nouvelle famille.
@@ -369,10 +370,10 @@ public class Singleton {
 					<img src="img/abstract-factory-uml.png" />
 				</section>
 				<section>
-					<h3>Implémentation</h3>
-					<img src="img/af-uml2.png" />
+					<h3>Implémentation Factory</h3>
+					<img src="img/factory-uml.png" />
 					<aside class="notes">
-						Exemple intellij à refaire
+						Voir exemple
 					</aside>
 				</section>
 			</section>
@@ -439,6 +440,10 @@ Pizza pizza = new PizzaBuilder()
 	.build();
 						</code>
 						</pre>
+				</section>
+				<section>
+					<h3>Pizza Builder</h3>
+						<img src="img/uml_pizza_builder.png" />
 						<aside class="notes">
 							Exemple étudiant. (démo intellij)
 						</aside>
