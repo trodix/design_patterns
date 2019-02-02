@@ -108,6 +108,122 @@
 				</section>
 			</section>
 			<section>
+				<section data-background="img/code.jpg">
+					<h1>Rappel POO</h1>
+				</section>
+				<section>
+					<h2>Class</h2>
+					<div class="multiCol">
+						<div class="col fragment">
+							<pre>
+								<code class="java" data-trim>
+class Nom
+{
+	
+}
+
+Nom instance = new Nom();
+								</code>
+							</pre>
+						</div>
+						<div class="col fragment">
+							<pre>
+								<code class="java" data-trim>
+class Nom
+{
+	Nom(){} // Java/C#/C++/...
+	__construct(){} // PHP
+
+	public int attribut;
+	private bool attribut2;
+	public static int attribut3;
+
+	public methode() {}
+	private methode2() {}
+}
+								</code>
+							</pre>
+						</div>
+					</div>
+					<aside class="notes">
+						Comment créer une classe puis en obtenir une instance.
+						Qu'est qu'un constructeur + visibilité des variables / methodes
+						static
+					</aside>
+				</section>
+				<section>
+					<h2>Interface</h2>
+					<div class="multiCol">
+						<div class="col fragment">
+							<pre>
+								<code class="java" data-trim>
+interface Nom
+{
+    public foo();
+}
+								</code>
+							</pre>
+						</div>
+						<div class="col fragment">
+							<pre>
+								<code class="java" data-trim>
+class Nom
+{
+    virtual void foo() = 0;
+}		
+								</code>
+							</pre>
+						</div>
+						<div class="col fragment">
+							<pre>
+								<code class="java" data-trim>
+abstract class Nom
+{
+    abstract void foo();
+}		
+								</code>
+							</pre>
+						</div>
+					</div>
+					<pre>
+						<code class="java" data-trim>
+class A implements B
+{
+
+}
+						</code>
+					</pre>
+					<aside class="notes">
+						Mot clé interface si il existe (Java,C#, PHP);<br />
+						Sinon class virtuelle (C++);<br />
+						Sinon class abstraite (Java,PHP, python ...)<br />
+
+						<strong>Une interface</strong> n'a pas d'utilité d'un point de vue fonctionnelle (ne fait rien).<br />
+						En revanche très important d'un point de vue conceptuel => défini le contrat que doit remplir la classe qui l'implémente.
+					</aside>
+				</section>
+				<section>
+					<h2>Héritage vs Implémentation</h2>
+					<table>
+							<thead>
+								<tr><td><strong>Implémentation</strong></td><td><strong>Héritage</strong></td></tr>
+							</thead>
+							<tbody>
+								<tr><td>implements / : </td><td> extends / :</td></tr>
+								<tr><td>Obligation d'implémenter</td><td>Accès à toutes les données parentes</td></tr>
+								<tr><td>Multiple</td><td>Souvent unique</td></tr>
+							</tbody>
+						</table>
+					<aside class="notes">
+						L'implémentation = contrat passé avec la classe qui l'implémente pour imposer certains fonctionnement.<br />
+
+						Héritage = Lien parenté entre objet<br />
+						<strong>Attention</strong> héritage fonctionnel à bannir (ex heriter d'une classe bdd pour ecrire des données)
+					</aside>
+				</section>
+				
+			</section>
+			<section>
 				<section><h1>Principes des design patterns</h1></section>
 				<section>
 					<h2>Définition</h2>
